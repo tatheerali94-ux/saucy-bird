@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saucy Bird | Gluten-Free Sauces &amp; Rubs, Made by Hand in Vancouver</title>
+<meta name="description" content="Five sauces. Four rubs. Gluten-free and made by hand in Vancouver. Thirty years of professional kitchens, finally in yours. Season it, dip it, finish it.">
+<meta name="theme-color" content="#FF5C39">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF5C39'/%3E%3Cpath d='M16 6c4 5 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 3-7 7-12z' fill='%231A1A18'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* =========================================================
+   Tokens
+   ========================================================= */
+:root{
+  --flame:#FF5C39;
+  --flame-deep:#E8431F;
+  --flame-soft:#FFEDE8;
+  --ink:#1A1A18;
+  --ink-2:#4B4A45;
+  --ink-3:#77756E;
+  --line:#E7E4DF;
+  --smoke:#F5F3F0;
+  --paper:#FFFFFF;
+  --char:#1A1A18;
+  --char-2:#262623;
+  --char-line:#3A3935;
+  --ok:#2F7A4A;
+
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --fs-sm:.9375rem;
+  --fs-base:1.0625rem;
+  --fs-lg:clamp(1.125rem, 1.05rem + .35vw, 1.3rem);
+  --fs-h3:clamp(1.3rem, 1.15rem + .6vw, 1.6rem);
+  --fs-h2:clamp(2.1rem, 1.4rem + 3vw, 3.9rem);
+  --fs-h1:clamp(2.6rem, 1.2rem + 4.3vw, 5.6rem);
+
+  --gutter:clamp(1.15rem, .7rem + 2.4vw, 2.5rem);
+  --max:1280px;
+  --section:clamp(4.5rem, 3rem + 6vw, 8.5rem);
+
+  --r-xs:8px; --r-sm:12px; --r-md:18px; --r-lg:28px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(26,26,24,.06), 0 12px 30px -16px rgba(26,26,24,.28);
+  --sh-2:0 2px 6px rgba(26,26,24,.06), 0 30px 60px -24px rgba(26,26,24,.4);
+
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+  --t1:150ms; --t2:280ms; --t3:600ms;
+
+  --header-h:64px;
+  --bar-h:40px;
+  --z-header:50; --z-chat:80; --z-toast:90;
+}
+@media (min-width:1024px){ :root{ --header-h:76px; } }
+
+/* =========================================================
+   Base
+   ========================================================= */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-padding-top:calc(var(--header-h) + 16px); }
+@media (prefers-reduced-motion:no-preference){ html{ scroll-behavior:smooth; } }
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); font-size:var(--fs-base); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+body.no-scroll{ overflow:hidden; }
+img{ display:block; max-width:100%; height:auto; }
+a{ color:inherit; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+button{ cursor:pointer; }
+h1,h2,h3,h4{ font-family:var(--display); font-weight:800; line-height:.98; letter-spacing:-.025em; margin:0; overflow-wrap:break-word; }
+h2{ font-size:var(--fs-h2); }
+h3{ font-size:var(--fs-h3); line-height:1.1; letter-spacing:-.015em; }
+p{ margin:0; }
+:focus-visible{ outline:3px solid var(--flame); outline-offset:3px; border-radius:6px; }
+.sr-only{ position:absolute!important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.skip{ position:absolute; left:1rem; top:-100px; z-index:200; padding:.75rem 1rem; background:var(--ink); color:#fff; border-radius:var(--r-xs); font-weight:700; text-decoration:none; }
+.skip:focus{ top:1rem; }
+.icon{ width:1.25em; height:1.25em; flex:none; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+.wrap{ width:min(100% - var(--gutter)*2, var(--max)); margin-inline:auto; }
+.section{ padding-block:var(--section); }
+.section--smoke{ background:var(--smoke); }
+.section--char{ background:var(--char); color:#F2F0EC; }
+.kicker{ display:inline-flex; align-items:center; gap:.5rem; font-weight:700; font-size:.95rem; color:var(--flame-deep); margin-bottom:1rem; }
+.section--char .kicker{ color:var(--flame); }
+.kicker::before{ content:""; width:10px; height:10px; border-radius:50%; background:var(--flame); }
+.lead{ font-size:var(--fs-lg); color:var(--ink-2); line-height:1.55; max-width:40rem; }
+.section--char .lead{ color:#C9C6BF; }
+.head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:1.5rem 3rem; margin-bottom:clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+.head > div{ max-width:44rem; }
+.head .lead{ margin-top:1.1rem; }
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn{
+  --bg:var(--flame); --fg:var(--ink); --bd:var(--flame);
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  min-height:52px; padding:.8rem 1.5rem; border-radius:var(--r-pill);
+  background:var(--bg); color:var(--fg); border:2px solid var(--bd);
+  font-weight:700; font-size:1rem; line-height:1.15; text-decoration:none; white-space:nowrap;
+  transition:background-color var(--t1) ease, color var(--t1) ease, border-color var(--t1) ease, transform var(--t2) var(--spring), box-shadow var(--t2) ease;
+}
+.btn:hover{ --bg:var(--flame-deep); --bd:var(--flame-deep); transform:translateY(-2px); box-shadow:0 12px 24px -12px rgba(232,67,31,.7); }
+.btn:active{ transform:translateY(0) scale(.98); }
+.btn .icon{ width:1.1em; height:1.1em; transition:transform var(--t2) var(--ease); }
+.btn:hover .arrow{ transform:translateX(3px); }
+.btn--ink{ --bg:var(--ink); --fg:#fff; --bd:var(--ink); }
+.btn--ink:hover{ --bg:#000; --bd:#000; box-shadow:0 12px 24px -12px rgba(0,0,0,.5); }
+.btn--line{ --bg:transparent; --fg:var(--ink); --bd:var(--ink); }
+.btn--line:hover{ --bg:var(--ink); --fg:#fff; --bd:var(--ink); box-shadow:none; }
+.btn--line-light{ --bg:transparent; --fg:#fff; --bd:rgba(255,255,255,.55); }
+.btn--line-light:hover{ --bg:#fff; --fg:var(--ink); --bd:#fff; box-shadow:none; }
+.btn--sm{ min-height:44px; padding:.55rem 1.1rem; font-size:.9375rem; }
+.btn--block{ width:100%; }
+.btn[disabled], .btn[aria-disabled="true"]{ --bg:var(--smoke); --fg:var(--ink-3); --bd:var(--line); transform:none; box-shadow:none; cursor:not-allowed; }
+.btn-row{ display:flex; flex-wrap:wrap; gap:.75rem; }
+.icon-btn{ width:44px; height:44px; display:inline-grid; place-items:center; border-radius:50%; border:1.5px solid var(--line); background:#fff; color:var(--ink); transition:background-color var(--t1) ease, border-color var(--t1) ease, transform var(--t2) var(--spring); }
+.icon-btn:hover{ border-color:var(--ink); transform:scale(1.05); }
+
+/* =========================================================
+   Announcement + Header
+   ========================================================= */
+.bar{ background:var(--ink); color:#fff; font-size:.9rem; font-weight:500; }
+.bar .wrap{ min-height:var(--bar-h); display:flex; align-items:center; justify-content:center; gap:.75rem; text-align:center; padding-block:.4rem; }
+.bar a{ color:var(--flame); font-weight:700; text-decoration:none; white-space:nowrap; }
+.bar a:hover{ text-decoration:underline; }
+.bar-progress{ display:none; }
+
+.header{ position:sticky; top:0; z-index:var(--z-header); background:rgba(255,255,255,.92); -webkit-backdrop-filter:blur(14px) saturate(1.4); backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid transparent; transition:border-color var(--t2) ease, box-shadow var(--t2) ease; }
+.header.scrolled{ border-color:var(--line); box-shadow:0 10px 30px -22px rgba(26,26,24,.5); }
+.header .wrap{ height:var(--header-h); display:flex; align-items:center; gap:.5rem; }
+.logo{ display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; margin-right:auto; min-height:44px; }
+.logo svg{ width:34px; height:34px; flex:none; }
+.logo b{ font-family:var(--display); font-weight:800; font-size:1.45rem; letter-spacing:-.03em; line-height:1; }
+.logo small{ display:none; font-size:.75rem; color:var(--ink-3); font-weight:600; line-height:1.1; border-left:1px solid var(--line); padding-left:.6rem; margin-left:.1rem; }
+@media (min-width:1200px){ .logo small{ display:block; } }
+.nav{ display:none; }
+.nav ul{ display:flex; list-style:none; margin:0; padding:0; gap:.1rem; }
+.nav a{ display:inline-flex; align-items:center; min-height:44px; padding:0 .8rem; border-radius:var(--r-pill); text-decoration:none; font-weight:600; font-size:.975rem; transition:background-color var(--t1) ease; }
+.nav a:hover{ background:var(--smoke); }
+.nav a.active{ background:var(--flame-soft); color:#A8331A; }
+.header-cta{ display:none; margin-left:.5rem; }
+.cart-btn{ position:relative; }
+.cart-count{ position:absolute; top:-4px; right:-4px; min-width:20px; height:20px; padding:0 5px; border-radius:var(--r-pill); background:var(--flame); color:var(--ink); font-size:.75rem; font-weight:800; display:grid; place-items:center; border:2px solid #fff; }
+.cart-count[data-n="0"]{ display:none; }
+.cart-btn.bump{ animation:bump .45s var(--spring); }
+@keyframes bump{ 40%{ transform:scale(1.18); } }
+.burger{ width:44px; height:44px; border-radius:50%; border:1.5px solid var(--line); background:#fff; display:inline-grid; place-items:center; }
+.burger span{ display:block; width:18px; height:2px; background:var(--ink); border-radius:2px; position:relative; transition:background-color var(--t1); }
+.burger span::before,.burger span::after{ content:""; position:absolute; left:0; width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform var(--t2) var(--ease), top var(--t2) var(--ease); }
+.burger span::before{ top:-6px; } .burger span::after{ top:6px; }
+.burger[aria-expanded="true"] span{ background:transparent; }
+.burger[aria-expanded="true"] span::before{ top:0; transform:rotate(45deg); }
+.burger[aria-expanded="true"] span::after{ top:0; transform:rotate(-45deg); }
+.mnav{ position:fixed; left:0; right:0; bottom:0; top:var(--mnav-top, var(--header-h)); z-index:calc(var(--z-header) - 1); background:#fff; padding:1rem var(--gutter) calc(1.5rem + env(safe-area-inset-bottom)); display:flex; flex-direction:column; overflow-y:auto; overscroll-behavior:contain; opacity:0; visibility:hidden; transform:translateY(-8px); transition:opacity var(--t2) ease, transform var(--t2) var(--ease), visibility 0s linear var(--t2); }
+.mnav.open{ opacity:1; visibility:visible; transform:none; transition:opacity var(--t2) ease, transform var(--t2) var(--ease); }
+.mnav ul{ list-style:none; margin:0; padding:0; }
+.mnav li + li{ border-top:1px solid var(--line); }
+.mnav a{ display:flex; justify-content:space-between; align-items:center; min-height:62px; text-decoration:none; font-family:var(--display); font-weight:800; font-size:1.75rem; letter-spacing:-.02em; }
+.mnav a .icon{ color:var(--flame); }
+.mnav-foot{ margin-top:auto; padding-top:1.5rem; display:grid; gap:.75rem; }
+.mnav-foot p{ text-align:center; color:var(--ink-3); font-size:.9rem; }
+@media (min-width:1024px){
+  .nav{ display:block; }
+  .header-cta{ display:inline-flex; }
+  .burger, .mnav{ display:none; }
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero{ position:relative; overflow:hidden; padding-block:clamp(2.5rem, 1.5rem + 4vw, 5rem) clamp(3rem, 2rem + 4vw, 5.5rem); }
+.hero::before{ content:""; position:absolute; right:-18vw; top:-10vw; width:min(78vw, 920px); aspect-ratio:1; border-radius:50%; background:var(--flame); z-index:-1; }
+@media (max-width:899px){ .hero::before{ right:-40vw; top:auto; bottom:-8vw; width:120vw; } }
+.hero-grid{ display:grid; gap:2.5rem; align-items:center; }
+@media (min-width:900px){ .hero-grid{ grid-template-columns:1.1fr .9fr; gap:3rem; } }
+.hero-tag{ display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .85rem .4rem .45rem; border-radius:var(--r-pill); background:var(--smoke); font-weight:600; font-size:.9rem; margin-bottom:1.5rem; }
+.hero-tag span{ background:var(--ink); color:#fff; border-radius:var(--r-pill); padding:.15rem .55rem; font-size:.78rem; font-weight:700; }
+.hero h1{ font-size:var(--fs-h1); line-height:.92; letter-spacing:-.04em; }
+.hero h1 .line{ display:block; }
+.hero h1 .swap{ position:relative; display:inline-block; color:var(--flame-deep); }
+.hero h1 .swap::after{ content:""; position:absolute; left:0; right:0; bottom:.06em; height:.09em; background:currentColor; border-radius:4px; transform-origin:left; }
+.hero .lead{ margin-top:1.5rem; max-width:34rem; }
+.hero .btn-row{ margin-top:2rem; }
+.hero-proof{ margin-top:2.25rem; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem 1.5rem; max-width:34rem; list-style:none; padding:0; }
+@media (min-width:560px){ .hero-proof{ grid-template-columns:repeat(4, minmax(0,1fr)); } }
+.hero-proof b{ display:block; font-family:var(--display); font-size:1.5rem; font-weight:800; letter-spacing:-.02em; line-height:1.1; }
+.hero-proof span{ font-size:.85rem; color:var(--ink-2); line-height:1.3; display:block; }
+
+.stage{ position:relative; }
+.stage-card{ position:relative; background:#fff; border-radius:var(--r-lg); box-shadow:var(--sh-2); padding:1rem; }
+.stage-media{ position:relative; aspect-ratio:4/4.3; border-radius:calc(var(--r-lg) - 8px); overflow:hidden; background:var(--smoke); }
+.stage-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity .45s ease, transform .6s var(--ease); }
+.stage-media img.leaving{ opacity:0; transform:scale(1.04); }
+.award{ position:absolute; left:1rem; top:1rem; z-index:2; background:var(--ink); color:#fff; border-radius:var(--r-pill); padding:.4rem .8rem; font-size:.8rem; font-weight:700; display:flex; align-items:center; gap:.4rem; transition:opacity var(--t2) ease, transform var(--t2) var(--ease); }
+.award.hide{ opacity:0; transform:translateY(-6px); pointer-events:none; }
+.award .icon{ color:var(--flame); width:1em; height:1em; }
+.stage-info{ padding:1.1rem .5rem .4rem; display:grid; gap:.65rem; }
+.stage-info .row{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; }
+.stage-info h2{ font-size:clamp(1.6rem, 1.3rem + 1vw, 2.1rem); }
+.stage-info .price{ font-weight:800; font-size:1.2rem; white-space:nowrap; }
+.stage-info p{ color:var(--ink-2); font-size:.975rem; line-height:1.5; min-height:3em; }
+.heat{ display:flex; align-items:center; gap:.6rem; font-size:.85rem; font-weight:600; color:var(--ink-2); }
+.heat i{ display:inline-flex; gap:3px; }
+.heat i b{ width:18px; height:6px; border-radius:3px; background:var(--line); transition:background-color var(--t2) ease; }
+.heat i b.on{ background:var(--flame); }
+.stage-info .btn-row{ margin-top:.3rem; }
+.stage-info .btn-row .btn{ flex:1 1 auto; }
+.chips{ display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1rem; }
+.chip{ min-height:44px; padding:.5rem 1rem; border-radius:var(--r-pill); border:1.5px solid var(--ink); background:#fff; font-weight:700; font-size:.9rem; transition:background-color var(--t1) ease, color var(--t1) ease, transform var(--t2) var(--spring); }
+.chip:hover{ transform:translateY(-2px); }
+.chip[aria-pressed="true"]{ background:var(--ink); color:#fff; }
+.stage-hint{ margin-top:.75rem; font-size:.85rem; color:var(--ink); font-weight:600; }
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy > *{ animation:rise .8s var(--ease) both; }
+  .hero-copy > *:nth-child(2){ animation-delay:.06s; }
+  .hero-copy > *:nth-child(3){ animation-delay:.12s; }
+  .hero-copy > *:nth-child(4){ animation-delay:.18s; }
+  .hero-copy > *:nth-child(5){ animation-delay:.24s; }
+  .stage{ animation:rise 1s .15s var(--ease) both; }
+  .hero h1 .swap::after{ animation:draw .8s .6s var(--ease) both; }
+}
+@keyframes rise{ from{ opacity:0; transform:translateY(24px); } to{ opacity:1; transform:none; } }
+@keyframes draw{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+
+/* =========================================================
+   Marquee
+   ========================================================= */
+.marquee{ background:var(--ink); color:#fff; overflow:hidden; padding:1.1rem 0; border-block:1px solid var(--ink); }
+.marquee-track{ display:flex; width:max-content; gap:0; }
+.marquee ul{ display:flex; list-style:none; margin:0; padding:0; flex:none; }
+.marquee li{ font-family:var(--display); font-weight:800; font-size:clamp(1.4rem, 1rem + 1.5vw, 2.25rem); letter-spacing:-.02em; white-space:nowrap; display:flex; align-items:center; }
+.marquee li::after{ content:""; width:.55em; height:.55em; border-radius:50%; background:var(--flame); margin:0 1.1em; }
+@media (prefers-reduced-motion:no-preference){ .marquee-track{ animation:scroll 38s linear infinite; } .marquee:hover .marquee-track{ animation-play-state:paused; } }
+@keyframes scroll{ to{ transform:translateX(-50%); } }
+
+/* =========================================================
+   Shop
+   ========================================================= */
+.tabs{ display:inline-flex; padding:4px; border-radius:var(--r-pill); background:var(--smoke); gap:2px; }
+.tab{ min-height:44px; padding:.5rem 1.2rem; border-radius:var(--r-pill); border:0; background:transparent; font-weight:700; font-size:.95rem; color:var(--ink-2); transition:background-color var(--t1) ease, color var(--t1) ease; }
+.tab[aria-selected="true"]{ background:var(--ink); color:#fff; }
+.tab .n{ opacity:.6; font-weight:600; margin-left:.2rem; }
+.grid{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fill, minmax(min(100%, 250px), 1fr)); list-style:none; margin:0; padding:0; }
+@media (max-width:559px){ .grid{ grid-template-columns:repeat(2, minmax(0,1fr)); gap:.75rem; } }
+@media (min-width:1100px){ .grid{ grid-template-columns:repeat(4, minmax(0,1fr)); gap:1.25rem; } }
+.card{ position:relative; height:100%; display:flex; flex-direction:column; background:#fff; border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; transition:box-shadow var(--t2) ease, border-color var(--t2) ease, transform var(--t2) var(--ease); }
+.card:hover{ box-shadow:var(--sh-2); border-color:transparent; }
+.card.hidden{ display:none; }
+.card-media{ position:relative; aspect-ratio:4/5; background:var(--smoke); overflow:hidden; perspective:900px; }
+.card-media button{ all:unset; position:absolute; inset:0; z-index:2; cursor:pointer; }
+.card-media button:focus-visible{ outline:3px solid var(--flame); outline-offset:-3px; }
+.card-media img{ width:100%; height:100%; object-fit:cover; transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--s,1)); transition:transform .5s var(--ease); }
+.card:hover .card-media img{ --s:1.05; }
+.card-badge{ position:absolute; left:.7rem; top:.7rem; z-index:1; padding:.3rem .65rem; border-radius:var(--r-pill); background:#fff; font-size:.75rem; font-weight:800; pointer-events:none; }
+.card-badge--hot{ background:var(--ink); color:#fff; }
+.card-badge--out{ background:var(--ink-2); color:#fff; }
+.card-peek{ position:absolute; left:.7rem; right:.7rem; bottom:.7rem; z-index:1; background:rgba(255,255,255,.95); border-radius:var(--r-pill); min-height:40px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.85rem; pointer-events:none; opacity:0; transform:translateY(8px); transition:opacity var(--t2) ease, transform var(--t2) var(--ease); }
+.card:hover .card-peek, .card-media button:focus-visible ~ .card-peek{ opacity:1; transform:none; }
+@media (hover:none){ .card-peek{ display:none; } }
+.card-body{ padding:1rem 1rem 1.1rem; display:flex; flex-direction:column; gap:.3rem; flex:1; }
+.card-type{ font-size:.8rem; font-weight:700; color:var(--ink-3); }
+.card h3{ font-size:1.3rem; }
+.card-note{ color:var(--ink-2); font-size:.9rem; line-height:1.4; }
+.card-foot{ margin-top:auto; padding-top:.8rem; display:flex; justify-content:space-between; align-items:center; gap:.5rem; }
+.card-price{ font-weight:800; font-size:1.05rem; }
+.add{ min-height:44px; padding:.45rem 1rem; border-radius:var(--r-pill); border:2px solid var(--ink); background:var(--ink); color:#fff; font-weight:700; font-size:.9rem; display:inline-flex; align-items:center; gap:.35rem; transition:background-color var(--t1) ease, border-color var(--t1) ease, color var(--t1) ease, transform var(--t2) var(--spring); }
+.add:hover{ background:var(--flame); border-color:var(--flame); color:var(--ink); transform:scale(1.04); }
+.add.added{ background:var(--ok); border-color:var(--ok); color:#fff; }
+.add[disabled]{ background:transparent; color:var(--ink-3); border-color:var(--line); cursor:not-allowed; transform:none; }
+@media (max-width:559px){
+  .card-body{ padding:.8rem .8rem .9rem; }
+  .card h3{ font-size:1.1rem; }
+  .card-note{ display:none; }
+  .card-foot{ flex-direction:column; align-items:stretch; }
+  .add{ justify-content:center; }
+}
+.shop-foot{ margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:center; justify-content:space-between; padding:1.25rem 1.5rem; border-radius:var(--r-md); background:var(--smoke); }
+.shop-foot p{ font-weight:600; }
+.shop-foot ul{ display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; list-style:none; margin:0; padding:0; font-size:.9rem; color:var(--ink-2); }
+.shop-foot li{ display:flex; align-items:center; gap:.4rem; }
+.shop-foot .icon{ color:var(--flame-deep); }
+
+/* =========================================================
+   Fixed image banner
+   ========================================================= */
+.banner{ position:relative; min-height:clamp(420px, 78vh, 720px); display:grid; place-items:center; text-align:center; color:#fff; clip-path:inset(0); isolation:isolate; }
+.banner-img{ position:fixed; inset:0; z-index:-2; background:#2a1a14 url("https://www.eatsaucybird.com/cdn/shop/t/90/assets/home-flavour-visual.jpg?v=58242725542572825041789434307") center/cover no-repeat; }
+.banner::before{ content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(ellipse at center, rgba(26,26,24,.35), rgba(26,26,24,.78)); }
+.banner-inner{ padding:4rem var(--gutter); max-width:62rem; }
+.banner h2{ font-size:clamp(2.4rem, 1.4rem + 5vw, 5.6rem); line-height:.95; letter-spacing:-.04em; }
+.banner-verbs{ display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-top:1.75rem; list-style:none; padding:0; }
+.banner-verbs li{ padding:.5rem 1rem; border-radius:var(--r-pill); background:rgba(255,255,255,.14); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.25); font-weight:700; }
+.banner p{ margin-top:1.5rem; font-size:var(--fs-lg); color:rgba(255,255,255,.88); }
+
+/* =========================================================
+   Flavour DNA quiz
+   ========================================================= */
+.quiz{ display:grid; gap:2rem; }
+@media (min-width:960px){ .quiz{ grid-template-columns:.8fr 1.2fr; gap:4rem; align-items:start; } }
+.profiles{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.75rem; margin-top:2rem; list-style:none; padding:0; }
+.profiles li{ border:1px solid var(--char-line); border-radius:var(--r-sm); padding:.9rem 1rem; transition:border-color var(--t2) ease, background-color var(--t2) ease; }
+.profiles li.lit{ border-color:var(--flame); background:rgba(255,92,57,.1); }
+.profiles b{ display:block; font-family:var(--display); font-size:1.15rem; letter-spacing:-.01em; }
+.profiles span{ font-size:.85rem; color:#A9A69E; }
+.quiz-box{ background:var(--char-2); border:1px solid var(--char-line); border-radius:var(--r-lg); padding:clamp(1.25rem, 1rem + 2vw, 2.5rem); min-height:520px; display:flex; flex-direction:column; }
+.quiz-top{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.5rem; }
+.quiz-step{ font-weight:700; font-size:.9rem; color:#C9C6BF; }
+.progress{ flex:1; max-width:220px; height:6px; border-radius:3px; background:var(--char-line); overflow:hidden; }
+.progress i{ display:block; height:100%; width:0; background:var(--flame); border-radius:3px; transition:width .45s var(--ease); }
+.q{ display:none; }
+.q.on{ display:block; animation:fadeIn .4s var(--ease); }
+@keyframes fadeIn{ from{ opacity:0; transform:translateX(12px); } to{ opacity:1; transform:none; } }
+.q legend{ font-family:var(--display); font-weight:800; font-size:clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem); line-height:1.05; letter-spacing:-.02em; padding:0; margin-bottom:1.25rem; }
+.q fieldset{ border:0; margin:0; padding:0; min-width:0; }
+.opts{ display:grid; gap:.6rem; }
+.opt{ position:relative; }
+.opt input{ position:absolute; opacity:0; inset:0; margin:0; cursor:pointer; }
+.opt label{ display:flex; align-items:center; gap:.9rem; min-height:60px; padding:.8rem 1rem; border-radius:var(--r-sm); border:1.5px solid var(--char-line); background:transparent; cursor:pointer; font-weight:500; line-height:1.35; transition:border-color var(--t1) ease, background-color var(--t1) ease, transform var(--t2) var(--spring); }
+.opt label::before{ content:""; flex:none; width:20px; height:20px; border-radius:50%; border:2px solid #77756E; transition:border-color var(--t1), box-shadow var(--t1), background-color var(--t1); }
+.opt label:hover{ border-color:#8a877f; transform:translateX(3px); }
+.opt input:checked + label{ border-color:var(--flame); background:rgba(255,92,57,.12); }
+.opt input:checked + label::before{ border-color:var(--flame); background:var(--flame); box-shadow:inset 0 0 0 4px var(--char-2); }
+.opt input:focus-visible + label{ outline:3px solid var(--flame); outline-offset:2px; }
+.quiz-nav{ margin-top:auto; padding-top:1.5rem; display:flex; justify-content:space-between; gap:.75rem; }
+.quiz-nav .btn--line-light[hidden]{ display:none; }
+.result{ display:none; }
+.result.on{ display:block; animation:fadeIn .5s var(--ease); }
+.result h3{ font-size:clamp(1.8rem, 1.4rem + 1.6vw, 2.8rem); line-height:1; }
+.result h3 em{ font-style:normal; color:var(--flame); }
+.result-meta{ display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 1.5rem; list-style:none; padding:0; }
+.result-meta li{ padding:.35rem .8rem; border-radius:var(--r-pill); background:var(--char); border:1px solid var(--char-line); font-size:.875rem; }
+.result-meta b{ color:var(--flame); }
+.picks{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.6rem; list-style:none; padding:0; margin:0 0 1.5rem; }
+.pick{ display:flex; gap:.7rem; align-items:center; padding:.5rem; border-radius:var(--r-sm); background:var(--char); border:1px solid var(--char-line); min-width:0; }
+.pick img{ width:52px; height:64px; object-fit:cover; border-radius:8px; background:#333; flex:none; }
+.pick b{ display:block; font-size:.95rem; line-height:1.2; }
+.pick span{ font-size:.8rem; color:#A9A69E; }
+@media (max-width:420px){ .picks{ grid-template-columns:1fr; } }
+
+/* =========================================================
+   Story
+   ========================================================= */
+.story{ display:grid; gap:3rem; }
+@media (min-width:960px){ .story{ grid-template-columns:.9fr 1.1fr; gap:5rem; align-items:start; } .story-media{ position:sticky; top:calc(var(--header-h) + 2rem); } }
+.story-media{ position:relative; }
+.story-photo{ border-radius:var(--r-lg); overflow:hidden; aspect-ratio:4/5; background:var(--smoke); }
+.story-photo img{ width:100%; height:100%; object-fit:cover; }
+.story-sig{ position:absolute; right:-.5rem; bottom:1.5rem; max-width:80%; background:var(--flame); color:var(--ink); border-radius:var(--r-md); padding:1rem 1.2rem; box-shadow:var(--sh-2); transform:rotate(-2deg); }
+.story-sig b{ display:block; font-family:var(--display); font-size:1.3rem; line-height:1.1; }
+.story-sig span{ font-size:.85rem; font-weight:600; }
+@media (max-width:959px){ .story-sig{ right:.75rem; } }
+.story h2{ max-width:14ch; }
+.story .lead{ margin-top:1.25rem; }
+.timeline{ list-style:none; margin:2.5rem 0 0; padding:0; position:relative; }
+.timeline::before{ content:""; position:absolute; left:11px; top:8px; bottom:8px; width:2px; background:var(--line); }
+.timeline li{ position:relative; padding:0 0 1.9rem 2.75rem; }
+.timeline li:last-child{ padding-bottom:0; }
+.timeline li::before{ content:""; position:absolute; left:3px; top:5px; width:18px; height:18px; border-radius:50%; background:#fff; border:3px solid var(--ink); transition:background-color var(--t2) ease, border-color var(--t2) ease, transform var(--t2) var(--spring); }
+.timeline li.seen::before{ background:var(--flame); border-color:var(--flame); transform:scale(1.1); }
+.timeline li:last-child::before{ background:var(--flame); border-color:var(--ink); }
+.timeline small{ display:block; font-weight:700; color:var(--flame-deep); font-size:.85rem; margin-bottom:.25rem; }
+.timeline h3{ font-size:1.3rem; margin-bottom:.35rem; }
+.timeline p{ color:var(--ink-2); font-size:1rem; line-height:1.55; max-width:36rem; }
+.pull{ margin:2.5rem 0 0; padding:1.5rem 1.6rem; border-left:4px solid var(--flame); background:var(--smoke); border-radius:0 var(--r-md) var(--r-md) 0; font-family:var(--display); font-weight:700; font-size:clamp(1.25rem, 1.1rem + .6vw, 1.6rem); line-height:1.2; letter-spacing:-.015em; }
+.story .btn-row{ margin-top:2rem; }
+
+/* =========================================================
+   Founders / Ledger
+   ========================================================= */
+.founders{ display:grid; gap:3rem; }
+@media (min-width:1024px){ .founders{ grid-template-columns:1fr 1fr; gap:4rem; align-items:center; } }
+.pack{ position:relative; border-radius:var(--r-lg); overflow:hidden; background:var(--char-2); aspect-ratio:1; }
+.pack img{ width:100%; height:100%; object-fit:cover; }
+.pack-price{ position:absolute; left:1rem; bottom:1rem; background:#fff; color:var(--ink); border-radius:var(--r-md); padding:.9rem 1.1rem; box-shadow:var(--sh-2); }
+.pack-price b{ font-family:var(--display); font-size:2rem; line-height:1; display:block; }
+.pack-price s{ color:var(--ink-3); font-size:.9rem; }
+.pack-price span{ font-size:.85rem; font-weight:600; }
+.founders h2{ max-width:13ch; }
+.founders .lead{ margin-top:1.25rem; }
+.includes{ list-style:none; padding:0; margin:1.75rem 0; display:grid; gap:.65rem; }
+.includes li{ display:flex; gap:.7rem; align-items:flex-start; color:#E3E0DA; }
+.includes .icon{ color:var(--flame); margin-top:.15rem; }
+.ledger-head{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; margin-bottom:.8rem; font-weight:700; }
+.ledger-head span{ color:#A9A69E; font-weight:500; font-size:.9rem; }
+.ledger-bar{ height:8px; border-radius:4px; background:var(--char-line); overflow:hidden; margin-bottom:1rem; }
+.ledger-bar i{ display:block; height:100%; background:var(--flame); width:0; transition:width 1.2s var(--ease); }
+.ledger{ display:grid; grid-template-columns:repeat(10, minmax(0,1fr)); gap:5px; list-style:none; padding:0; margin:0 0 1.25rem; }
+.ledger button{ width:100%; aspect-ratio:1; border-radius:6px; border:1px solid var(--char-line); background:var(--char-2); color:#77756E; font-size:clamp(.55rem, .45rem + .3vw, .72rem); font-weight:700; padding:0; display:grid; place-items:center; transition:background-color var(--t1) ease, border-color var(--t1) ease, color var(--t1) ease, transform var(--t2) var(--spring); }
+.ledger button.taken{ background:#34332F; border-color:#34332F; color:#6E6C66; cursor:default; }
+.ledger button.open{ border-color:var(--flame); color:var(--flame); background:transparent; }
+.ledger button.open:hover{ transform:scale(1.12); background:rgba(255,92,57,.15); }
+.ledger button.picked{ background:var(--flame); color:var(--ink); transform:scale(1.12); }
+.ledger-note{ min-height:1.6em; font-size:.95rem; color:#C9C6BF; margin-bottom:1.25rem; }
+.ledger-note b{ color:var(--flame); }
+.legend{ display:flex; gap:1.25rem; font-size:.85rem; color:#A9A69E; margin-bottom:1.25rem; flex-wrap:wrap; }
+.legend span{ display:inline-flex; align-items:center; gap:.4rem; }
+.legend i{ width:12px; height:12px; border-radius:3px; display:inline-block; }
+
+/* =========================================================
+   Society tiers
+   ========================================================= */
+.tiers{ display:grid; gap:1rem; list-style:none; padding:0; margin:0; }
+@media (min-width:900px){ .tiers{ grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.25rem; align-items:stretch; } }
+.tier{ position:relative; height:100%; display:flex; flex-direction:column; border:1.5px solid var(--line); border-radius:var(--r-lg); padding:1.5rem; background:#fff; transition:transform var(--t2) var(--ease), box-shadow var(--t2) ease, border-color var(--t2) ease; }
+.tier:hover{ transform:translateY(-4px); box-shadow:var(--sh-2); }
+.tier--top{ border-color:var(--ink); background:var(--ink); color:#F2F0EC; }
+.tier-flag{ position:absolute; top:-13px; left:1.5rem; background:var(--flame); color:var(--ink); padding:.25rem .75rem; border-radius:var(--r-pill); font-size:.78rem; font-weight:800; }
+.tier-top{ display:flex; gap:1rem; align-items:center; margin-bottom:1.25rem; }
+.tier-top img{ width:72px; height:72px; border-radius:var(--r-sm); object-fit:cover; background:var(--smoke); flex:none; }
+.tier small{ font-size:.8rem; font-weight:700; color:var(--ink-3); display:block; }
+.tier--top small{ color:#A9A69E; }
+.tier h3{ font-size:1.6rem; }
+.tier-price{ font-family:var(--display); font-weight:800; font-size:2.2rem; letter-spacing:-.03em; line-height:1; }
+.tier-price span{ font-family:var(--body); font-size:.9rem; font-weight:500; color:var(--ink-3); letter-spacing:0; }
+.tier--top .tier-price span{ color:#A9A69E; }
+.tier > p{ margin:.6rem 0 1rem; color:var(--ink-2); }
+.tier--top > p{ color:#C9C6BF; }
+.tier ul{ list-style:none; padding:0; margin:0 0 1.5rem; display:grid; gap:.5rem; font-size:.95rem; }
+.tier li{ display:flex; gap:.55rem; align-items:flex-start; }
+.tier li .icon{ color:var(--flame-deep); margin-top:.15rem; width:1.1em; height:1.1em; }
+.tier--top li .icon{ color:var(--flame); }
+.tier .btn{ margin-top:auto; }
+.order{ margin-top:2.5rem; display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; list-style:none; padding:0; counter-reset:o; }
+.order-label{ font-weight:700; margin-right:.5rem; }
+.order li{ counter-increment:o; display:inline-flex; align-items:center; gap:.45rem; padding:.45rem .9rem .45rem .45rem; border-radius:var(--r-pill); background:#fff; border:1px solid var(--line); font-weight:600; font-size:.9rem; }
+.order li::before{ content:counter(o); width:24px; height:24px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-size:.75rem; font-weight:800; }
+.order li:first-of-type::before{ background:var(--flame); color:var(--ink); }
+
+/* =========================================================
+   Reviews
+   ========================================================= */
+.rating{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.rating b{ font-family:var(--display); font-size:3.4rem; line-height:1; letter-spacing:-.04em; }
+.stars{ display:flex; gap:2px; color:var(--flame); }
+.stars svg{ width:20px; height:20px; fill:currentColor; }
+.rating p{ color:var(--ink-2); font-size:.95rem; }
+.reviews{ display:grid; grid-auto-flow:column; grid-auto-columns:min(86%, 380px); gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding:.25rem .1rem 1.25rem; list-style:none; margin:0; scrollbar-width:thin; }
+.reviews > li{ scroll-snap-align:start; }
+@media (min-width:1100px){ .reviews{ grid-auto-columns:calc((100% - 2rem) / 3); } }
+.review{ height:100%; margin:0; display:flex; flex-direction:column; gap:1rem; padding:1.5rem; border-radius:var(--r-md); background:#fff; border:1px solid var(--line); }
+.review h3{ font-size:1.2rem; }
+.review blockquote{ margin:0; color:var(--ink-2); line-height:1.55; }
+.review figcaption{ margin-top:auto; display:flex; align-items:center; gap:.7rem; font-weight:700; font-size:.95rem; }
+.review figcaption i{ width:38px; height:38px; border-radius:50%; background:var(--flame-soft); color:#A8331A; font-style:normal; display:grid; place-items:center; font-weight:800; }
+.review figcaption span{ display:block; font-weight:500; color:var(--ink-3); font-size:.85rem; }
+.rev-ctrl{ display:flex; gap:.5rem; }
+
+/* =========================================================
+   Wholesale + FAQ
+   ========================================================= */
+.split{ display:grid; gap:3rem; }
+@media (min-width:960px){ .split{ grid-template-columns:1fr 1fr; gap:4rem; } }
+.ws{ border-radius:var(--r-lg); background:var(--flame); color:var(--ink); padding:clamp(1.75rem, 1.2rem + 2.5vw, 3rem); display:flex; flex-direction:column; }
+.ws h2{ font-size:clamp(2rem, 1.5rem + 2vw, 3rem); max-width:12ch; }
+.ws > p{ margin-top:1rem; font-size:1.05rem; line-height:1.55; max-width:34rem; }
+.ws-grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.75rem; margin:1.75rem 0; }
+.ws-grid div{ background:rgba(255,255,255,.35); border-radius:var(--r-sm); padding:1rem; }
+.ws-grid b{ font-family:var(--display); font-size:1.6rem; display:block; line-height:1; }
+.ws-grid span{ font-size:.85rem; font-weight:600; }
+.ws ul{ list-style:none; padding:0; margin:0 0 1.75rem; display:grid; gap:.4rem; font-size:.95rem; font-weight:500; }
+.ws ul li::before{ content:"— "; font-weight:800; }
+.ws .btn{ margin-top:auto; align-self:flex-start; }
+.faq h2{ font-size:clamp(2rem, 1.5rem + 2vw, 3rem); margin-bottom:1.5rem; }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{ list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:64px; padding:.75rem 0; cursor:pointer; font-weight:700; font-size:1.075rem; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary .pm{ flex:none; width:32px; height:32px; border-radius:50%; border:1.5px solid var(--line); display:grid; place-items:center; transition:transform var(--t2) var(--ease), background-color var(--t1), border-color var(--t1); }
+.faq details[open] summary .pm{ transform:rotate(45deg); background:var(--flame); border-color:var(--flame); }
+.faq details p{ padding:0 0 1.25rem; color:var(--ink-2); max-width:38rem; }
+.faq .ask{ margin-top:1.5rem; display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; color:var(--ink-2); }
+
+/* =========================================================
+   Final CTA + Footer
+   ========================================================= */
+.final{ text-align:center; }
+.final h2{ font-size:clamp(2.6rem, 1.4rem + 5.5vw, 6rem); line-height:.92; letter-spacing:-.045em; max-width:14ch; margin-inline:auto; }
+.final p{ margin:1.25rem auto 2rem; color:var(--ink-2); font-size:var(--fs-lg); max-width:32rem; }
+.final .btn-row{ justify-content:center; }
+.footer{ background:var(--char); color:#C9C6BF; padding-top:clamp(3.5rem, 2.5rem + 4vw, 5.5rem); }
+.foot-grid{ display:grid; gap:2.5rem 1.5rem; grid-template-columns:repeat(2, minmax(0,1fr)); padding-bottom:3rem; }
+.foot-brand{ grid-column:1/-1; max-width:26rem; }
+@media (min-width:900px){ .foot-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } .foot-brand{ grid-column:auto; } }
+.footer .logo{ color:#fff; margin:0 0 1rem; }
+.foot-brand p{ line-height:1.6; }
+.foot-col h2{ font-family:var(--body); font-size:.95rem; font-weight:700; letter-spacing:0; color:#fff; margin-bottom:.8rem; line-height:1.3; }
+.foot-col ul{ list-style:none; margin:0; padding:0; }
+.foot-col a{ display:inline-flex; align-items:center; min-height:40px; text-decoration:none; color:#C9C6BF; transition:color var(--t1); }
+.foot-col a:hover{ color:var(--flame); }
+.social{ display:flex; gap:.5rem; margin-top:1.25rem; }
+.social a{ width:44px; height:44px; border-radius:50%; background:var(--char-2); border:1px solid var(--char-line); display:grid; place-items:center; color:#fff; transition:background-color var(--t1), transform var(--t2) var(--spring); }
+.social a:hover{ background:var(--flame); color:var(--ink); transform:translateY(-2px); }
+.social svg{ width:20px; height:20px; }
+.news{ margin-top:1.5rem; }
+.news label{ display:block; font-weight:700; color:#fff; margin-bottom:.5rem; font-size:.95rem; }
+.news-row{ display:flex; gap:.5rem; }
+.news input{ flex:1; min-width:0; min-height:48px; padding:.7rem 1rem; border-radius:var(--r-pill); border:1.5px solid var(--char-line); background:var(--char-2); color:#fff; font-size:1rem; }
+.news input::placeholder{ color:#8A877F; }
+.news input:focus{ outline:none; border-color:var(--flame); box-shadow:0 0 0 4px rgba(255,92,57,.2); }
+.news .btn{ min-height:48px; }
+.news-msg{ font-size:.875rem; margin-top:.5rem; min-height:1.3em; }
+.news-msg.err{ color:#FF8C73; }
+.news-msg.ok{ color:#8FD3A8; }
+.foot-bottom{ border-top:1px solid var(--char-line); padding-block:1.5rem calc(1.5rem + env(safe-area-inset-bottom)); display:flex; flex-wrap:wrap; gap:.75rem 2rem; justify-content:space-between; font-size:.875rem; color:#8A877F; }
+.foot-bottom a{ color:#8A877F; text-decoration:none; }
+.foot-bottom a:hover{ color:#fff; }
+.foot-bottom ul{ display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; list-style:none; margin:0; padding:0; }
+.footer :focus-visible{ outline-color:var(--flame); }
+
+/* =========================================================
+   Dialogs: quick view + cart
+   ========================================================= */
+dialog{ border:0; padding:0; color:var(--ink); background:#fff; max-width:none; max-height:none; }
+dialog::backdrop{ background:rgba(26,26,24,.55); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); }
+.modal{ width:min(940px, calc(100% - 2rem)); max-height:calc(100dvh - 2rem); border-radius:var(--r-lg); overflow:auto; overscroll-behavior:contain; }
+.modal[open]{ animation:pop .35s var(--ease); }
+@keyframes pop{ from{ opacity:0; transform:translateY(16px) scale(.98); } to{ opacity:1; transform:none; } }
+.modal-close{ position:absolute; right:.9rem; top:.9rem; z-index:2; }
+.qv{ display:grid; }
+@media (min-width:760px){ .qv{ grid-template-columns:1fr 1.1fr; } }
+.qv-media{ background:var(--smoke); aspect-ratio:4/4.4; }
+@media (min-width:760px){ .qv-media{ aspect-ratio:auto; min-height:100%; } }
+.qv-media img{ width:100%; height:100%; object-fit:cover; }
+.qv-body{ padding:clamp(1.5rem, 1rem + 2vw, 2.5rem); display:flex; flex-direction:column; gap:.9rem; }
+.qv-body h2{ font-size:clamp(2rem, 1.6rem + 1.5vw, 2.8rem); padding-right:2.5rem; }
+.qv-price{ display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; font-weight:800; font-size:1.4rem; }
+.qv-price small{ font-size:.85rem; font-weight:600; color:var(--ok); }
+.qv-desc{ color:var(--ink-2); line-height:1.6; }
+.qv-facts{ display:grid; grid-template-columns:auto 1fr; gap:.5rem 1rem; margin:0; font-size:.95rem; padding:1rem; border-radius:var(--r-sm); background:var(--smoke); }
+.qv-facts dt{ font-weight:700; }
+.qv-facts dd{ margin:0; color:var(--ink-2); }
+.qv-pair{ display:flex; gap:.8rem; align-items:center; padding:.7rem; border:1.5px dashed var(--line); border-radius:var(--r-sm); }
+.qv-pair img{ width:48px; height:60px; object-fit:cover; border-radius:6px; background:var(--smoke); flex:none; }
+.qv-pair p{ flex:1; font-size:.9rem; line-height:1.35; }
+.qv-pair b{ display:block; }
+.qty{ display:inline-flex; align-items:center; border:1.5px solid var(--line); border-radius:var(--r-pill); }
+.qty button{ width:44px; height:44px; border:0; background:transparent; font-size:1.2rem; font-weight:700; border-radius:50%; }
+.qty button:hover{ background:var(--smoke); }
+.qty output{ min-width:2ch; text-align:center; font-weight:700; }
+.qv-buy{ display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+.qv-buy .btn{ flex:1 1 180px; }
+
+.drawer{ margin:0 0 0 auto; height:100dvh; max-height:100dvh; width:min(440px, 100%); display:none; flex-direction:column; border-radius:0; }
+.drawer[open]{ display:flex; animation:slideIn .35s var(--ease); }
+@keyframes slideIn{ from{ transform:translateX(40px); opacity:0; } to{ transform:none; opacity:1; } }
+.drawer-head{ display:flex; justify-content:space-between; align-items:center; padding:1.1rem 1.25rem; border-bottom:1px solid var(--line); }
+.drawer-head h2{ font-size:1.6rem; }
+.ship{ padding:1rem 1.25rem; background:var(--smoke); font-size:.925rem; font-weight:600; }
+.ship-bar{ height:8px; border-radius:4px; background:#fff; overflow:hidden; margin-top:.55rem; border:1px solid var(--line); }
+.ship-bar i{ display:block; height:100%; width:0; background:var(--flame); border-radius:4px; transition:width .5s var(--ease); }
+.ship.done .ship-bar i{ background:var(--ok); }
+.lines{ flex:1; overflow-y:auto; list-style:none; margin:0; padding:.5rem 1.25rem; }
+.cart-line{ display:grid; grid-template-columns:64px 1fr auto; gap:.9rem; align-items:center; padding:1rem 0; border-bottom:1px solid var(--line); }
+.cart-line img{ width:64px; height:80px; object-fit:cover; border-radius:10px; background:var(--smoke); }
+.cart-line b{ display:block; line-height:1.2; }
+.cart-line span{ font-size:.85rem; color:var(--ink-3); }
+.cart-line .qty{ margin-top:.4rem; }
+.cart-line .qty button{ width:36px; height:36px; }
+.line-right{ text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:.3rem; }
+.line-right button{ border:0; background:none; color:var(--ink-3); font-size:.85rem; text-decoration:underline; min-height:36px; padding:0 .25rem; }
+.line-right button:hover{ color:var(--ink); }
+.empty{ padding:3rem 1.25rem; text-align:center; }
+.empty h3{ font-size:1.5rem; margin-bottom:.4rem; }
+.empty p{ color:var(--ink-2); margin-bottom:1.5rem; }
+.upsell{ margin:1rem 1.25rem; padding:1rem; border-radius:var(--r-sm); background:var(--ink); color:#fff; font-size:.9rem; }
+.upsell b{ color:var(--flame); }
+.upsell a{ color:#fff; font-weight:700; }
+.drawer-foot{ padding:1.1rem 1.25rem calc(1.1rem + env(safe-area-inset-bottom)); border-top:1px solid var(--line); display:grid; gap:.8rem; }
+.subtotal{ display:flex; justify-content:space-between; font-weight:800; font-size:1.15rem; }
+.drawer-foot small{ color:var(--ink-3); text-align:center; }
+
+/* =========================================================
+   Toast
+   ========================================================= */
+.toast{ position:fixed; left:50%; bottom:calc(1rem + env(safe-area-inset-bottom)); z-index:var(--z-toast); transform:translate(-50%, 140%); background:var(--ink); color:#fff; border-radius:var(--r-pill); padding:.6rem .6rem .6rem 1.1rem; display:flex; align-items:center; gap:.9rem; box-shadow:var(--sh-2); max-width:calc(100% - 2rem); transition:transform .4s var(--spring); font-weight:600; font-size:.95rem; }
+.toast.show{ transform:translate(-50%, 0); }
+.toast button{ min-height:40px; padding:.35rem .9rem; border-radius:var(--r-pill); border:0; background:var(--flame); color:var(--ink); font-weight:700; white-space:nowrap; }
+.toast span{ min-width:0; }
+
+/* =========================================================
+   Chat assistant
+   ========================================================= */
+.chat-fab{ position:fixed; right:1rem; bottom:calc(1rem + env(safe-area-inset-bottom)); z-index:var(--z-chat); display:inline-flex; align-items:center; gap:.55rem; min-height:58px; padding:0 1.25rem 0 1rem; border-radius:var(--r-pill); border:0; background:var(--ink); color:#fff; font-weight:700; box-shadow:0 14px 30px -10px rgba(26,26,24,.6); transition:transform var(--t2) var(--spring), opacity var(--t2) ease; }
+.chat-fab:hover{ transform:translateY(-3px); }
+.chat-fab .dot{ width:34px; height:34px; border-radius:50%; background:var(--flame); display:grid; place-items:center; color:var(--ink); }
+.chat-fab .dot svg{ width:18px; height:18px; }
+.chat-fab.hide{ opacity:0; pointer-events:none; transform:scale(.9); }
+.chat-fab .ping{ position:absolute; top:6px; left:38px; width:10px; height:10px; border-radius:50%; background:#3DDC84; border:2px solid var(--ink); }
+@media (max-width:479px){ .chat-fab .label{ display:none; } .chat-fab{ padding:0 12px; width:58px; justify-content:center; } }
+.chat{ position:fixed; z-index:var(--z-chat); right:1rem; bottom:calc(1rem + env(safe-area-inset-bottom)); width:min(400px, calc(100% - 2rem)); height:min(620px, calc(100dvh - 2rem)); background:#fff; border-radius:var(--r-lg); box-shadow:0 30px 80px -20px rgba(26,26,24,.55); display:flex; flex-direction:column; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(16px) scale(.98); transform-origin:bottom right; transition:opacity var(--t2) ease, transform var(--t2) var(--ease), visibility 0s linear var(--t2); }
+.chat.open{ opacity:1; visibility:visible; transform:none; transition:opacity var(--t2) ease, transform var(--t2) var(--ease); }
+@media (max-width:559px){ .chat{ right:0; bottom:0; width:100%; height:100dvh; border-radius:0; padding-top:env(safe-area-inset-top); } }
+.chat-head{ display:flex; align-items:center; gap:.75rem; padding:.9rem 1rem; background:var(--ink); color:#fff; }
+.chat-head .dot{ width:40px; height:40px; border-radius:50%; background:var(--flame); display:grid; place-items:center; color:var(--ink); flex:none; }
+.chat-head b{ display:block; font-family:var(--display); font-size:1.15rem; line-height:1.1; }
+.chat-head span{ font-size:.8rem; color:#A9A69E; display:flex; align-items:center; gap:.35rem; }
+.chat-head span::before{ content:""; width:8px; height:8px; border-radius:50%; background:#3DDC84; }
+.chat-head .icon-btn{ margin-left:auto; background:transparent; border-color:var(--char-line); color:#fff; }
+.chat-log{ flex:1; overflow-y:auto; padding:1rem; display:flex; flex-direction:column; gap:.75rem; background:var(--smoke); overscroll-behavior:contain; }
+.msg{ max-width:88%; padding:.7rem .95rem; border-radius:18px; line-height:1.45; font-size:.95rem; animation:msgIn .3s var(--ease); overflow-wrap:anywhere; }
+@keyframes msgIn{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+.msg.bot{ align-self:flex-start; background:#fff; border:1px solid var(--line); border-bottom-left-radius:6px; }
+.msg.me{ align-self:flex-end; background:var(--ink); color:#fff; border-bottom-right-radius:6px; }
+.msg p + p{ margin-top:.45rem; }
+.msg a{ color:#A8331A; font-weight:700; }
+.typing{ display:inline-flex; gap:4px; padding:.9rem 1rem; }
+.typing i{ width:7px; height:7px; border-radius:50%; background:var(--ink-3); animation:blink 1s infinite; }
+.typing i:nth-child(2){ animation-delay:.15s; } .typing i:nth-child(3){ animation-delay:.3s; }
+@keyframes blink{ 0%,100%{ opacity:.3; transform:translateY(0);} 50%{ opacity:1; transform:translateY(-3px);} }
+.mini{ display:flex; gap:.6rem; align-items:center; margin-top:.6rem; padding:.45rem; border-radius:12px; background:var(--smoke); }
+.mini img{ width:40px; height:50px; object-fit:cover; border-radius:6px; background:#eee; flex:none; }
+.mini div{ flex:1; min-width:0; font-size:.85rem; line-height:1.25; }
+.mini b{ display:block; font-size:.9rem; }
+.mini .add{ min-height:36px; padding:.25rem .75rem; font-size:.8rem; }
+.suggest{ display:flex; gap:.4rem; overflow-x:auto; padding:.6rem 1rem; border-top:1px solid var(--line); scrollbar-width:none; }
+.suggest::-webkit-scrollbar{ display:none; }
+.suggest button{ flex:none; min-height:38px; padding:.35rem .85rem; border-radius:var(--r-pill); border:1.5px solid var(--line); background:#fff; font-size:.85rem; font-weight:600; white-space:nowrap; transition:border-color var(--t1), background-color var(--t1); }
+.suggest button:hover{ border-color:var(--ink); background:var(--smoke); }
+.chat-form{ display:flex; gap:.5rem; padding:.75rem 1rem calc(.75rem + env(safe-area-inset-bottom)); border-top:1px solid var(--line); }
+.chat-form input{ flex:1; min-width:0; min-height:48px; padding:.6rem 1rem; border-radius:var(--r-pill); border:1.5px solid var(--line); font-size:1rem; background:#fff; }
+.chat-form input:focus{ outline:none; border-color:var(--ink); box-shadow:0 0 0 4px rgba(26,26,24,.08); }
+.chat-form button{ width:48px; height:48px; border-radius:50%; border:0; background:var(--flame); color:var(--ink); display:grid; place-items:center; flex:none; transition:transform var(--t2) var(--spring); }
+.chat-form button:hover{ transform:scale(1.06); }
+
+/* =========================================================
+   Reveal
+   ========================================================= */
+@media (prefers-reduced-motion:no-preference){
+  .js [data-reveal]{ opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+  .js [data-reveal].in{ opacity:1; transform:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11M11 10.5V4.5a1.5 1.5 0 0 1 3 0V11M14 10.5V6a1.5 1.5 0 0 1 3 0v7a7 7 0 0 1-7 7h-.5a6 6 0 0 1-4.6-2.2L2.8 15a1.5 1.5 0 0 1 2.3-2l2.9 2.7"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9 4 7 20M17 4l-2 16M4.5 9h16M3.5 15h16"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12 20 4l-5 16-3-7z"/><path d="m12 13 8-9"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <p><span id="bar-text">Free shipping in Canada over $75.</span> <a href="#shop">Shop the line</a></p>
+  </div>
+</div>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Saucy Bird, back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#FF5C39"/><path d="M16 6c4 5 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 3-7 7-12z" fill="#1A1A18"/></svg>
+      <b>Saucy Bird</b>
+      <small>Made by hand<br>in Vancouver</small>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#quiz">Flavour DNA</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#founders">Founders</a></li>
+        <li><a href="#society">The Society</a></li>
+        <li><a href="#wholesale">Wholesale</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--sm header-cta" href="#founders">Become a Founder</a>
+    <button class="icon-btn cart-btn" type="button" id="cart-open" aria-label="Open cart, 0 items">
+      <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+      <span class="cart-count" data-n="0" aria-hidden="true">0</span>
+    </button>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <ul>
+    <li><a href="#shop">Shop <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#quiz">Flavour DNA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#story">Our Story <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#founders">Founders <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#society">The Society <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#wholesale">Wholesale <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a class="btn" href="#founders">Become a Founder, 16 left</a>
+    <a class="btn btn--line" href="#shop">Shop the line</a>
+    <p>Gluten-free · Made by hand in Vancouver</p>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-tag"><span>New</span> Full Frontal wins Best Flavour 2026</p>
+      <h1 id="hero-title"><span class="line">Make whatever</span> <span class="line">you're making</span> <span class="line swap">better.</span></h1>
+      <p class="lead">Sauces and seasonings built in professional kitchens to turn everyday food into something worth talking about. Shake it. Dip it. Toss it. Finish it. From CA$13.99.</p>
+      <div class="btn-row">
+        <a class="btn" href="#shop">Shop the line <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--line" href="#quiz">Find my flavour</a>
+      </div>
+      <ul class="hero-proof">
+        <li><b>100%</b><span>Gluten-free across the line</span></li>
+        <li><b>pH</b><span>Tested and retail-ready</span></li>
+        <li><b>VCH</b><span>Vancouver Coastal Health compliant</span></li>
+        <li><b>30 yrs</b><span>Professional kitchen proven</span></li>
+      </ul>
+    </div>
+
+    <div class="stage">
+      <div class="stage-card">
+        <div class="stage-media">
+          <span class="award" id="stage-award"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg>Best Flavour 2026</span>
+          <img id="stage-img" width="900" height="1200" fetchpriority="high"
+            src="https://www.eatsaucybird.com/cdn/shop/files/ChatGPTImageAug28_2026_02_54_14PM_900x1200_crop_center.png?v=1787954561"
+            alt="Full Frontal coffee hot sauce, 355 mL bottle">
+        </div>
+        <div class="stage-info" aria-live="polite">
+          <div class="row"><h2 id="stage-name">Full Frontal</h2><span class="price" id="stage-price">$17.99</span></div>
+          <p id="stage-desc">Cold brew. Cayenne. Chaos. A bright, savoury coffee hot sauce for eggs, tacos, pizza and burgers.</p>
+          <div class="heat"><span>Heat</span><i id="stage-heat" aria-hidden="true"><b></b><b></b><b></b><b></b></i><span class="sr-only" id="stage-heat-sr">3 of 4</span></div>
+          <div class="btn-row">
+            <button class="btn btn--ink" type="button" id="stage-add">Add to cart</button>
+            <button class="btn btn--line" type="button" id="stage-more">Details</button>
+          </div>
+        </div>
+      </div>
+      <div class="chips" role="group" aria-label="Choose a sauce to preview">
+        <button class="chip" type="button" data-sauce="full-frontal" aria-pressed="true">Full Frontal</button>
+        <button class="chip" type="button" data-sauce="foul-play" aria-pressed="false">Foul Play</button>
+        <button class="chip" type="button" data-sauce="late-checkout" aria-pressed="false">Late Checkout</button>
+        <button class="chip" type="button" data-sauce="loose-lips" aria-pressed="false">Loose Lips</button>
+        <button class="chip" type="button" data-sauce="strip-tease" aria-pressed="false">Strip Tease</button>
+      </div>
+      <p class="stage-hint">Tap a sauce to preview it</p>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <ul><li>Loose Lips</li><li>Strip Tease</li><li>Full Frontal</li><li>Foul Play</li><li>Late Checkout</li><li>Salt Me Daddy</li><li>Bird Bath</li><li>Thirst Trap</li><li>Ranch Hand</li></ul>
+    <ul><li>Loose Lips</li><li>Strip Tease</li><li>Full Frontal</li><li>Foul Play</li><li>Late Checkout</li><li>Salt Me Daddy</li><li>Bird Bath</li><li>Thirst Trap</li><li>Ranch Hand</li></ul>
+  </div>
+</div>
+
+<!-- ================= SHOP ================= -->
+<section class="section" id="shop" aria-labelledby="shop-title">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div>
+        <p class="kicker">The flavour system</p>
+        <h2 id="shop-title">Nine products. One unfair advantage.</h2>
+        <p class="lead">Five sauces and four rubs, built to work together. 25 to 30 better meals a bottle.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Filter products">
+        <button class="tab" role="tab" aria-selected="true" data-filter="all">All <span class="n">9</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="Sauce">Sauces <span class="n">5</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="Rub">Rubs <span class="n">4</span></button>
+      </div>
+    </div>
+    <ul class="grid" id="grid" aria-live="polite"></ul>
+    <div class="shop-foot" data-reveal>
+      <p>Not sure where to start? Foul Play is the one that tastes most like Saucy Bird.</p>
+      <ul>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>Gluten-free</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg>Made by hand</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping over $75</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIXED BANNER ================= -->
+<section class="banner" aria-labelledby="banner-title">
+  <div class="banner-img" role="img" aria-label="Saucy Bird sauces and rubs with food"></div>
+  <div class="banner-inner" data-reveal>
+    <h2 id="banner-title">Built in restaurants. Made for your kitchen.</h2>
+    <ul class="banner-verbs"><li>Season with it</li><li>Cook with it</li><li>Dip with it</li><li>Finish with it</li></ul>
+    <p>Chicken, steak, salmon, fries, vegetables, even popcorn. The food changes. The flavour doesn't.</p>
+  </div>
+</section>
+
+<!-- ================= FLAVOUR DNA ================= -->
+<section class="section section--char" id="quiz" aria-labelledby="quiz-title">
+  <div class="wrap quiz">
+    <div data-reveal>
+      <p class="kicker">Flavour DNA</p>
+      <h2 id="quiz-title">Don't know where to start?</h2>
+      <p class="lead" style="margin-top:1.25rem">Four questions. No email needed. We'll match you with a starting four built around the way you actually eat.</p>
+      <ul class="profiles" id="profiles">
+        <li data-p="0"><b>Pickle Ranch</b><span>Briny, herby, tangy</span></li>
+        <li data-p="1"><b>Spice Rack</b><span>Harissa, citrus, warm spice</span></li>
+        <li data-p="2"><b>Smoke Show</b><span>Char, coffee, roast</span></li>
+        <li data-p="3"><b>Savoury Affair</b><span>Salt, acid, umami</span></li>
+      </ul>
+    </div>
+
+    <div class="quiz-box" data-reveal>
+      <form id="quiz-form" novalidate>
+        <div class="quiz-top">
+          <span class="quiz-step" id="quiz-step">Question 1 of 4</span>
+          <div class="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1"><i id="quiz-bar" style="width:25%"></i></div>
+        </div>
+
+        <div class="q on" data-q="0"><fieldset><legend>What do you make without thinking?</legend><div class="opts">
+          <div class="opt"><input type="radio" name="q0" id="q0a" value="0"><label for="q0a">Chicken, fries, sandwiches. Something needs dipping.</label></div>
+          <div class="opt"><input type="radio" name="q0" id="q0b" value="2"><label for="q0b">Burgers, steak, wings. If the grill is hot, I'm happy.</label></div>
+          <div class="opt"><input type="radio" name="q0" id="q0c" value="1"><label for="q0c">Bowls, wraps, roasted vegetables. Big flavour, weeknight speed.</label></div>
+          <div class="opt"><input type="radio" name="q0" id="q0d" value="3"><label for="q0d">Eggs, pizza, tacos. Whatever is open gets upgraded.</label></div>
+        </div></fieldset></div>
+
+        <div class="q" data-q="1"><fieldset><legend>Which flavour direction gets you every time?</legend><div class="opts">
+          <div class="opt"><input type="radio" name="q1" id="q1a" value="0"><label for="q1a">Pickle brine. Ranch herbs. Creamy tang.</label></div>
+          <div class="opt"><input type="radio" name="q1" id="q1b" value="1"><label for="q1b">Harissa. Za'atar. Lemon. Warm spice with a sharp edge.</label></div>
+          <div class="opt"><input type="radio" name="q1" id="q1c" value="2"><label for="q1c">Smoke. Char. Coffee. Roasted flavour that hangs around.</label></div>
+          <div class="opt"><input type="radio" name="q1" id="q1d" value="3"><label for="q1d">Salt. Acid. Pepper. Deep savouriness.</label></div>
+        </div></fieldset></div>
+
+        <div class="q" data-q="2"><fieldset><legend>Where should the heat sit?</legend><div class="opts">
+          <div class="opt"><input type="radio" name="q2" id="q2a" value="1"><label for="q2a">In the background. Flavour first.</label></div>
+          <div class="opt"><input type="radio" name="q2" id="q2b" value="2"><label for="q2b">Warm enough to notice. Easy enough for everything.</label></div>
+          <div class="opt"><input type="radio" name="q2" id="q2c" value="3"><label for="q2c">A proper kick, but keep it balanced.</label></div>
+          <div class="opt"><input type="radio" name="q2" id="q2d" value="4"><label for="q2d">Make me sweat a little. I came here for it.</label></div>
+        </div></fieldset></div>
+
+        <div class="q" data-q="3"><fieldset><legend>Pick the bite you'd steal off someone else's plate.</legend><div class="opts">
+          <div class="opt"><input type="radio" name="q3" id="q3a" value="0"><label for="q3a">Crispy chicken. Pickle ranch. Hot fries on the side.</label></div>
+          <div class="opt"><input type="radio" name="q3" id="q3b" value="1"><label for="q3b">Harissa chicken. Lemon. Herbs. Crispy edges.</label></div>
+          <div class="opt"><input type="radio" name="q3" id="q3c" value="2"><label for="q3c">A charred burger. Smoky sauce. Roasted potatoes.</label></div>
+          <div class="opt"><input type="radio" name="q3" id="q3d" value="3"><label for="q3d">Eggs, pizza or tacos hit with savoury hot sauce and salt.</label></div>
+        </div></fieldset></div>
+
+        <div class="result" id="result" tabindex="-1">
+          <p class="kicker">Your Flavour DNA</p>
+          <h3 id="result-title"></h3>
+          <ul class="result-meta" id="result-meta"></ul>
+          <ul class="picks" id="picks"></ul>
+          <div class="btn-row">
+            <button class="btn" type="button" id="add-four">Add my starting four</button>
+            <button class="btn btn--line-light" type="button" id="quiz-restart">Retake</button>
+          </div>
+        </div>
+
+        <div class="quiz-nav" id="quiz-nav">
+          <button class="btn btn--line-light" type="button" id="quiz-back" hidden>Back</button>
+          <button class="btn" type="button" id="quiz-next" disabled>Next <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section class="section" id="story" aria-labelledby="story-title">
+  <div class="wrap story">
+    <div class="story-media" data-reveal>
+      <div class="story-photo">
+        <img loading="lazy" width="800" height="1000" src="https://www.eatsaucybird.com/cdn/shop/files/IMG_7632_800x1000_crop_top.png?v=1785095926" alt="Late Checkout, the original Saucy Bird sauce, first built in 2014">
+      </div>
+      <div class="story-sig"><b>Seamus Dixon</b><span>Founder &amp; Executive Pit Boss</span></div>
+    </div>
+    <div>
+      <p class="kicker">The origin</p>
+      <h2 id="story-title">This is not a startup product.</h2>
+      <p class="lead">Every sauce and rub in this lineup was stress-tested in a real professional kitchen before it ever had a label. It's thirty years of knowing what works, finally available for your kitchen.</p>
+      <ol class="timeline" id="timeline">
+        <li><small>Halifax · Age 16</small><h3>The drive-through window</h3><p>Memorizing the regulars at a Burger King window, calling their orders before they stopped the car. That reaction is the feeling he's chased ever since.</p></li>
+        <li><small>The bar years</small><h3>Hospitality over everything</h3><p>From bartending to general manager, taking a $400,000 restaurant to $3 million by teaching a team to make every guest feel like the only person in the room.</p></li>
+        <li><small>2013 · Smak</small><h3>Healthy fast food, before it was a thing</h3><p>Pre-prepped great ingredients, served in thirty seconds. Late Checkout was built in 2014 and has never been reformulated.</p></li>
+        <li><small>Maison Simons · 8 years</small><h3>The meatball that changed everything</h3><p>Twenty dishes for sixteen board members. Dish twenty, chocolate beer meatballs, ended the process. Then eight years and seven venues across Canada.</p></li>
+        <li><small>BRGR BRGR · Abbotsford</small><h3>Six years of proof</h3><p>His chicken strips were the most ordered item on the menu for six consecutive years.</p></li>
+        <li><small>Vancouver</small><h3>Saucy Bird</h3><p>"I miss your chicken strips," said an old partner at the bar. Three months later, Saucy Bird existed.</p></li>
+      </ol>
+      <p class="pull">The food changes. The flavour doesn't.</p>
+      <div class="btn-row">
+        <a class="btn btn--ink" href="https://www.eatsaucybird.com/pages/our-story">Read the full story <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="section section--char" id="founders" aria-labelledby="founders-title">
+  <div class="wrap founders">
+    <div class="pack" data-reveal>
+      <img loading="lazy" width="800" height="800" src="https://www.eatsaucybird.com/cdn/shop/files/Founderspackupdate_800x800_crop_center.png?v=1786824415" alt="The Founding 50 set: all eight Saucy Bird sauces and rubs with a numbered founder card">
+      <div class="pack-price"><b>$129</b><s>$119.92 retail + shipping</s><span>Shipping included, Canada-wide</span></div>
+    </div>
+    <div data-reveal>
+      <p class="kicker">The Founding 50</p>
+      <h2 id="founders-title">Your number is waiting.</h2>
+      <p class="lead">Every purchase puts you on the Sauce Ledger. Founders hold SB-11 to SB-60, the only numbers below SB-500 that will ever be sold.</p>
+      <ul class="includes">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>All eight sauces and rubs, the complete system</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>A physical founder card and a permanent Ledger number</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>48-hour early access to every drop, for life</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Founding pricing locked, plus unpublished recipe cards</li>
+      </ul>
+      <div class="ledger-head"><span style="color:#fff">34 recorded · <b style="color:var(--flame)">16 waiting</b></span><span>SB-11 → SB-60</span></div>
+      <div class="ledger-bar"><i id="ledger-bar"></i></div>
+      <div class="legend"><span><i style="background:#34332F"></i>Claimed</span><span><i style="border:1.5px solid var(--flame)"></i>Available, tap to pick</span></div>
+      <ul class="ledger" id="ledger" aria-label="Founder numbers"></ul>
+      <p class="ledger-note" id="ledger-note" aria-live="polite">Pick an open number to see it reserved for you.</p>
+      <div class="btn-row">
+        <button class="btn" type="button" id="founder-add">Take your number · $129</button>
+        <a class="btn btn--line-light" href="#shop">Start with one bottle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOCIETY ================= -->
+<section class="section section--smoke" id="society" aria-labelledby="society-title">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div>
+        <p class="kicker">The Society</p>
+        <h2 id="society-title">Stay in the room.</h2>
+        <p class="lead">A curated box of sauces and rubs every 60 days, plus vault releases, founder notes and early windows. Skip or pause anytime.</p>
+      </div>
+    </div>
+    <ul class="tiers">
+      <li data-reveal>
+        <article class="tier">
+          <div class="tier-top"><img loading="lazy" width="120" height="120" src="https://www.eatsaucybird.com/cdn/shop/files/Late_Checkout_new_label_hero_2_7c64bfef-0d7e-4f96-b74e-b6ca73469262_600x600_crop_center.png?v=1785118180" alt=""><div><small>Tier 01</small><h3>The Re-Up</h3></div></div>
+          <p class="tier-price">$31.99 <span>every 60 days</span></p>
+          <p>The staples, always on hand.</p>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Two sauces, curated</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Skip or pause anytime</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Ledger number with first shipment</li>
+          </ul>
+          <button class="btn btn--line btn--block" type="button" data-add="re-up">Join The Re-Up</button>
+        </article>
+      </li>
+      <li data-reveal>
+        <article class="tier">
+          <span class="tier-flag">Most chosen</span>
+          <div class="tier-top"><img loading="lazy" width="120" height="120" src="https://www.eatsaucybird.com/cdn/shop/files/FoulPlayProductShot_0b9d0ab8-2918-4388-aee4-7f170d4f11e9_600x600_crop_center.png?v=1785118180" alt=""><div><small>Tier 02</small><h3>The Ritual</h3></div></div>
+          <p class="tier-price">$59.99 <span>every 60 days</span></p>
+          <p>The full system, delivered.</p>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Two sauces and two rubs</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Curated pairing from the kitchen</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Skip or pause anytime</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Ledger number with first shipment</li>
+          </ul>
+          <button class="btn btn--block" type="button" data-add="ritual">Join The Ritual</button>
+        </article>
+      </li>
+      <li data-reveal>
+        <article class="tier tier--top">
+          <div class="tier-top"><img loading="lazy" width="120" height="120" src="https://www.eatsaucybird.com/cdn/shop/files/ChatGPT_Image_Jun_9_2026_10_45_29_PM_71cfbd87-398e-4490-b7a8-2a86ce690e90_600x600_crop_center.png?v=1785118180" alt=""><div><small>Tier 03 · The top rung</small><h3>The House</h3></div></div>
+          <p class="tier-price">$75.99 <span>every 60 days</span></p>
+          <p>Inside the vault. First at everything.</p>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Three sauces and two rubs</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Seasonal limited releases</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Taste vault candidates first</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Founder notes with every drop</li>
+          </ul>
+          <button class="btn btn--block" type="button" data-add="house">Join The House</button>
+        </article>
+      </li>
+    </ul>
+    <div class="order" data-reveal>
+      <span class="order-label" id="order-label">Every drop opens in order:</span>
+      <ol class="order" aria-labelledby="order-label" style="margin:0">
+      <li>Founding 50</li><li>The House</li><li>The Ritual</li><li>The Re-Up</li><li>Everyone else</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div>
+        <p class="kicker">On the record</p>
+        <h2 id="rev-title">What founders are saying.</h2>
+      </div>
+      <div class="rating">
+        <b>5.0</b>
+        <div>
+          <div class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <p>From every verified review</p>
+        </div>
+        <div class="rev-ctrl">
+          <button class="icon-btn" type="button" data-rev="-1" aria-label="Previous reviews"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+          <button class="icon-btn" type="button" data-rev="1" aria-label="Next reviews"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <ul class="reviews" id="reviews" tabindex="0" aria-label="Customer reviews, scroll horizontally">
+      <li><figure class="review"><div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><h3>Saucy goodness for Father's Day</h3><blockquote>Since the founders box arrived we've been living in sauce and rub bliss. Husband loves the BBQ, son loves the honey mustard, and I love all the rubs.</blockquote><figcaption><i aria-hidden="true">E</i><div>Erin Sullivan<span>Founder</span></div></figcaption></figure></li>
+      <li><figure class="review"><div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><h3>'Foul Play' delicious on everything</h3><blockquote>Picked it up after sampling it in store and I love it. Perfect spice, great consistency. Chicken, burgers, even tofu. My new go-to condiment.</blockquote><figcaption><i aria-hidden="true">A</i><div>Ali J.<span>Foul Play</span></div></figcaption></figure></li>
+      <li><figure class="review"><div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><h3>A fantastic gift</h3><blockquote>The names are clever, and the sauces and rubs are delicious with lots of variety. The packaging is impressive to send to clients.</blockquote><figcaption><i aria-hidden="true">Y</i><div>Yana<span>Founder</span></div></figcaption></figure></li>
+      <li><figure class="review"><div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><h3>Amazing flavours</h3><blockquote>Loving all of the sauces and rubs. Great for BBQ, dipping sauces and marinades. Highly recommend.</blockquote><figcaption><i aria-hidden="true">A</i><div>Amy Asselin<span>Founder</span></div></figcaption></figure></li>
+      <li><figure class="review"><div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><h3>Replaced everything in my fridge</h3><blockquote>A well made product that has quickly replaced all the other sauces that used to fill up my refrigerator.</blockquote><figcaption><i aria-hidden="true">J</i><div>Jennifer Lauren<span>Founder</span></div></figcaption></figure></li>
+      <li><figure class="review"><div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><h3>Amazing!!</h3><blockquote>Strips have never been so sexy.</blockquote><figcaption><i aria-hidden="true">R</i><div>Rik<span>Founder</span></div></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WHOLESALE + FAQ ================= -->
+<section class="section section--smoke" id="wholesale" aria-labelledby="ws-title">
+  <div class="wrap split">
+    <div class="ws" data-reveal>
+      <p class="kicker" style="color:var(--ink)">Wholesale</p>
+      <h2 id="ws-title">Built for shelves that mean something.</h2>
+      <p>For specialty grocers, butcher shops, curated food retail and hospitality accounts. The Sauce Ledger builds reorder behaviour in, so customers come back because they're part of something.</p>
+      <div class="ws-grid">
+        <div><b>$8.00</b><span>Sauce wholesale · $15.99 MSRP</span></div>
+        <div><b>$7.00</b><span>Rub wholesale · $13.99 MSRP</span></div>
+      </div>
+      <ul>
+        <li>Minimum opening order: 12 units per SKU</li>
+        <li>Retail-ready BOPP matte labels</li>
+        <li>Gluten-free, pH tested, VCH compliant</li>
+        <li>Currently available in British Columbia</li>
+      </ul>
+      <a class="btn btn--ink" href="mailto:seamus@eatsaucybird.com?subject=Wholesale%20application">Apply to carry <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <div class="faq" data-reveal>
+      <h2>Questions, answered.</h2>
+      <details><summary>Is everything really gluten-free?<span class="pm" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Yes. Every sauce and rub in the line is gluten-free and celiac-safe, pH tested, and made in a Vancouver Coastal Health compliant kitchen.</p></details>
+      <details><summary>How does shipping work?<span class="pm" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Everything ships from Vancouver, BC. Shipping is free in Canada on orders over $75, and always included with the Founding 50 set.</p></details>
+      <details><summary>What's the Sauce Ledger?<span class="pm" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>It's not a loyalty program. No points, no tiers, no expiry. Every purchase earns a permanent number that shows when you found the brand. Founders hold SB-11 to SB-60, and the public Ledger opens at SB-500.</p></details>
+      <details><summary>Can I pause or skip my Society box?<span class="pm" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Anytime. Pause, skip a shipment, or cancel from your account in a few taps. Boxes ship every 60 days from the day you join.</p></details>
+      <details><summary>What are the allergens?<span class="pm" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Each product lists its allergens on the label and in its details. For example, Foul Play contains sesame, milk, mustard and sulphites, and Late Checkout contains mustard.</p></details>
+      <p class="ask">Still curious? <button class="btn btn--sm btn--ink" type="button" data-open-chat>Ask Saucy</button></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section final" aria-labelledby="final-title">
+  <div class="wrap" data-reveal>
+    <h2 id="final-title">Your number is waiting.</h2>
+    <p>16 founder sets remain. When they're gone, this chapter closes.</p>
+    <div class="btn-row">
+      <a class="btn" href="#founders">Become a Founder · $129</a>
+      <a class="btn btn--line" href="#shop">Start with one bottle</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top" aria-label="Saucy Bird, back to top">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#FF5C39"/><path d="M16 6c4 5 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 3-7 7-12z" fill="#1A1A18"/></svg>
+          <b>Saucy Bird</b>
+        </a>
+        <p>A sauce and rub brand built in professional kitchens and made for real life. Five sauces. Four rubs. One flavour system.</p>
+        <form class="news" id="news" novalidate>
+          <label for="news-email">Get first word on new drops</label>
+          <div class="news-row">
+            <input id="news-email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-describedby="news-msg">
+            <button class="btn btn--sm" type="submit">Sign up</button>
+          </div>
+          <p class="news-msg" id="news-msg" aria-live="polite"></p>
+        </form>
+        <div class="social">
+          <a href="https://instagram.com/eatsaucybird" aria-label="Saucy Bird on Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/></svg></a>
+          <a href="https://tiktok.com/@eatsaucybird" aria-label="Saucy Bird on TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.2 1.7 3.8 4 4v3a7.3 7.3 0 0 1-4-1.3v6.1A5.8 5.8 0 1 1 10.7 9v3.1a2.8 2.8 0 1 0 2 2.7V3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h2>Shop</h2><ul>
+        <li><a href="#shop">Shop all</a></li>
+        <li><a href="#shop" data-go-filter="Sauce">Sauces</a></li>
+        <li><a href="#shop" data-go-filter="Rub">Rubs</a></li>
+        <li><a href="#founders">The Founding 50</a></li>
+      </ul></div>
+      <div class="foot-col"><h2>Brand</h2><ul>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="https://www.eatsaucybird.com/blogs/news">Journal</a></li>
+        <li><a href="#wholesale">Wholesale</a></li>
+        <li><a href="https://madebyhands.ca">Made by Hands Farm</a></li>
+      </ul></div>
+      <div class="foot-col"><h2>Help</h2><ul>
+        <li><a href="https://www.eatsaucybird.com/policies/shipping-policy">Shipping</a></li>
+        <li><a href="https://www.eatsaucybird.com/policies/refund-policy">Returns</a></li>
+        <li><a href="mailto:hello@eatsaucybird.com">Contact</a></li>
+        <li><a href="#" data-open-chat>Ask Saucy</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year">2026</span> Made by Hands Sauce Inc. · Saucy Bird™ · Vancouver, BC. Canadian owned, made by hand.</p>
+      <ul><li><a href="https://www.eatsaucybird.com/policies/privacy-policy">Privacy</a></li><li><a href="https://www.eatsaucybird.com/policies/terms-of-service">Terms</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= QUICK VIEW ================= -->
+<dialog class="modal" id="qv" aria-labelledby="qv-name">
+  <button class="icon-btn modal-close" type="button" data-close aria-label="Close details"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+  <div class="qv">
+    <div class="qv-media"><img id="qv-img" src="" alt="" width="600" height="750"></div>
+    <div class="qv-body">
+      <p class="card-type" id="qv-type"></p>
+      <h2 id="qv-name"></h2>
+      <div class="qv-price"><span id="qv-price"></span><small>Free shipping over $75</small></div>
+      <p class="qv-desc" id="qv-desc"></p>
+      <dl class="qv-facts">
+        <dt>Best with</dt><dd id="qv-best"></dd>
+        <dt>Heat</dt><dd id="qv-heat"></dd>
+        <dt>Size</dt><dd id="qv-size"></dd>
+        <dt>Allergens</dt><dd id="qv-allergens"></dd>
+      </dl>
+      <div class="qv-pair" id="qv-pair"></div>
+      <div class="qv-buy">
+        <div class="qty" aria-label="Quantity"><button type="button" id="qv-minus" aria-label="Decrease quantity">−</button><output id="qv-qty" aria-live="polite">1</output><button type="button" id="qv-plus" aria-label="Increase quantity">+</button></div>
+        <button class="btn" type="button" id="qv-add">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ================= CART ================= -->
+<dialog class="drawer" id="cart" aria-labelledby="cart-title">
+  <div class="drawer-head">
+    <h2 id="cart-title">Your cart</h2>
+    <button class="icon-btn" type="button" data-close aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="ship" id="ship"><span id="ship-text">You're $75.00 away from free shipping</span><div class="ship-bar"><i id="ship-bar"></i></div></div>
+  <ul class="lines" id="lines"></ul>
+  <div class="upsell" id="upsell">Go further with <b>The Ritual</b>: founder-curated boxes and first access to every drop. <a href="#society" data-close>See the tiers</a></div>
+  <div class="drawer-foot" id="cart-foot">
+    <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+    <button class="btn btn--ink btn--block" type="button" id="checkout">Checkout <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <small>Gluten-free · Made by hand in Vancouver</small>
+  </div>
+</dialog>
+
+<!-- ================= CHAT ================= -->
+<button class="chat-fab" type="button" id="chat-fab" aria-controls="chat" aria-expanded="false">
+  <span class="dot"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+  <span class="ping" aria-hidden="true"></span>
+  <span class="label">Ask Saucy</span>
+  <span class="sr-only">Open the Saucy Bird assistant</span>
+</button>
+<section class="chat" id="chat" aria-label="Saucy Bird assistant" aria-hidden="true">
+  <div class="chat-head">
+    <span class="dot" aria-hidden="true"><svg class="icon"><use href="#i-chat"/></svg></span>
+    <div><b>Saucy</b><span>Sauce sommelier · replies instantly</span></div>
+    <button class="icon-btn" type="button" id="chat-close" aria-label="Close assistant"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="chat-log" id="chat-log" role="log" aria-live="polite"></div>
+  <div class="suggest" id="suggest"></div>
+  <form class="chat-form" id="chat-form">
+    <label for="chat-input" class="sr-only">Message Saucy</label>
+    <input id="chat-input" type="text" autocomplete="off" placeholder="What are you cooking tonight?" maxlength="200">
+    <button type="submit" aria-label="Send message"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+  </form>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toast-text"></span><button type="button" id="toast-btn">View cart</button></div>
+
+<script>
+(function(){
+'use strict';
+var $ = function(s, c){ return (c||document).querySelector(s); };
+var $$ = function(s, c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+var CDN = 'https://www.eatsaucybird.com/cdn/shop/files/';
+var money = function(n){ return '$' + n.toFixed(2); };
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ------------------------------------------------------------------
+   Product catalogue (content from eatsaucybird.com)
+------------------------------------------------------------------ */
+var P = [
+  { id:'full-frontal', name:'Full Frontal', type:'Sauce', price:17.99, heat:3, profile:1, file:'ChatGPTImageAug28_2026_02_54_14PM', v:'1787954561', badge:'Best Flavour 2026', hot:true,
+    note:'Cold brew. Cayenne. Chaos.', stage:'Cold brew. Cayenne. Chaos. A bright, savoury coffee hot sauce for eggs, tacos, pizza and burgers.',
+    desc:'A bright, savoury coffee hot sauce built with red peppers, cold brew and sharp acidity. The coffee brings roasted depth underneath the peppers rather than sweetness. Winner of Best Flavour at the 2026 Vancouver Hot Sauce Festival.',
+    best:'Chicken, eggs, tacos, pizza, burgers, grilled vegetables', size:'355 mL', allergens:'See label', pair:'salt-me-daddy', pairNote:'Salt the fries, then hit them with heat.' },
+  { id:'foul-play', name:'Foul Play', type:'Sauce', price:15.99, heat:2, profile:3, file:'IMG_7859', v:'1786024614', badge:'Signature',
+    note:'The house-sauce treatment.', stage:'The one that tastes most like Saucy Bird. Multi-layered, complex, built for everything.',
+    desc:'Mayonnaise, ketchup, Worcestershire, Dijon, pickle juice, za\'atar, harissa, buttermilk, dill, smoked paprika, honey, cayenne and brewed coffee. Every layer doing something. None of them competing. If you want to understand this brand, start here.',
+    best:'Smash burgers, strips, sandwiches, fries, finishing drizzle', size:'355 mL', allergens:'Sesame, milk, mustard, sulphites', pair:'salt-me-daddy', pairNote:'Season the fries. Dip them in Foul Play.' },
+  { id:'late-checkout', name:'Late Checkout', type:'Sauce', price:15.99, heat:2, profile:2, file:'IMG_7632', v:'1785095926', badge:'The original',
+    note:'Smoke, depth, darkness.', stage:'Coffee BBQ. Built in 2014 and never reformulated. A dip that thinks it\'s a glaze.',
+    desc:'Cold brew, coffee rub, espresso vinegar, blackstrap molasses, sweet chili, tamari, harissa, caraway, coriander, cumin and smoked paprika. Baste ribs in the last twenty minutes, marinate thighs overnight, or swap it for ketchup and don\'t look back.',
+    best:'Ribs, chicken thighs, burgers, anything off the grill', size:'355 mL', allergens:'Mustard', pair:'bird-bath', pairNote:'Rub it in before the fire. Finish with Late Checkout.' },
+  { id:'loose-lips', name:'Loose Lips', type:'Sauce', price:15.99, heat:1, profile:0, file:'IMG_7857', v:'1786024614',
+    note:'Cool, creamy and herby.', stage:'A cool hot ranch that can\'t keep a secret. Creamy, herby and made for dipping.',
+    desc:'A cool hot ranch that can\'t keep a secret. Creamy and herby with a gentle warmth, it starts the conversation on chicken, fries, wraps and anything that needs dipping.',
+    best:'Chicken strips, wings, fries, wraps, salads', size:'355 mL', allergens:'See label', pair:'ranch-hand', pairNote:'Double down on ranch and pickle.' },
+  { id:'strip-tease', name:'Strip Tease', type:'Sauce', price:15.99, heat:1, profile:3, file:'IMG_7858', v:'1786024614', soldOut:true,
+    note:'Sweet, tangy, addictive.', stage:'Honey mustard never had an espresso before. Now it can\'t go back. Back soon.',
+    desc:'Honey mustard never had an espresso before. Now it can\'t go back. Sweet, tangy and addictive, it\'s the slow reveal of the line. Currently sold out.',
+    best:'Chicken strips, pretzels, pork, sandwiches', size:'355 mL', allergens:'See label', pair:'bird-bath', pairNote:'Honey mustard meets southern BBQ rub.' },
+  { id:'salt-me-daddy', name:'Salt Me Daddy', type:'Rub', price:13.99, heat:1, profile:3, file:'IMG_7682', v:'1786024614',
+    note:'Umami fry seasoning. The foundation.', desc:'The fry seasoning that doesn\'t know when to quit. Shake it over fresh-cut fries, popcorn, roasted potatoes or eggs. The umami foundation of the whole system.',
+    best:'Fries, popcorn, potatoes, eggs', size:'227 g', allergens:'See label', pair:'foul-play', pairNote:'Season the fries. Dip them in Foul Play.' },
+  { id:'bird-bath', name:'Bird Bath', type:'Rub', price:13.99, heat:2, profile:2, file:'IMG_7678', v:'1786024614',
+    note:'Southern chicken rub. Full coverage.', desc:'A southern BBQ rub that started with chicken and refused to stop there. Full coverage on wings, thighs, ribs and pork.',
+    best:'Chicken, wings, ribs, pork', size:'227 g', allergens:'See label', pair:'late-checkout', pairNote:'Rub it in before the fire. Finish with Late Checkout.' },
+  { id:'ranch-hand', name:'Ranch Hand', type:'Rub', price:13.99, heat:1, profile:0, file:'IMG_7676', v:'1786024614',
+    note:'Ranch and pickle. Does the work.', desc:'Buttermilk, dill, and a pickle punch that hits harder than it looks. Great on chicken, fries, popcorn and roasted vegetables.',
+    best:'Chicken, fries, popcorn, roasted vegetables', size:'227 g', allergens:'See label', pair:'loose-lips', pairNote:'Rub with Ranch Hand, dip in Loose Lips.' },
+  { id:'thirst-trap', name:'Thirst Trap', type:'Rub', price:13.99, heat:2, profile:1, file:'IMG_7680', v:'1786024614',
+    note:'Lemon pepper. Harissa. Za\'atar.', desc:'Lemon pepper. Harissa heat. Za\'atar earthiness. A rub that works on chicken, salmon, halibut, bowls and roasted vegetables.',
+    best:'Chicken, salmon, halibut, bowls, vegetables', size:'227 g', allergens:'See label', pair:'full-frontal', pairNote:'Bright spice meets bright heat.' }
+];
+var EXTRA = {
+  'founding-50': { id:'founding-50', name:'The Founding 50 Set', type:'Set', price:129, file:'Founderspackupdate', v:'1786824415', sq:true },
+  're-up': { id:'re-up', name:'The Re-Up · every 60 days', type:'Membership', price:31.99, file:'Late_Checkout_new_label_hero_2_7c64bfef-0d7e-4f96-b74e-b6ca73469262', v:'1785118180', sq:true },
+  'ritual': { id:'ritual', name:'The Ritual · every 60 days', type:'Membership', price:59.99, file:'FoulPlayProductShot_0b9d0ab8-2918-4388-aee4-7f170d4f11e9', v:'1785118180', sq:true },
+  'house': { id:'house', name:'The House · every 60 days', type:'Membership', price:75.99, file:'ChatGPT_Image_Jun_9_2026_10_45_29_PM_71cfbd87-398e-4490-b7a8-2a86ce690e90', v:'1785118180', sq:true }
+};
+var byId = {}; P.forEach(function(p){ byId[p.id] = p; }); Object.keys(EXTRA).forEach(function(k){ byId[k] = EXTRA[k]; });
+function img(p, w, h){ w = w || 600; h = h || 750; if (p.sq){ h = w; } return CDN + p.file + '_' + w + 'x' + h + '_crop_center.png?v=' + p.v; }
+function alt(p){ return p.name + (p.type === 'Rub' ? ' rub, 227 g jar' : p.type === 'Sauce' ? ' sauce, 355 mL bottle' : '') + ' by Saucy Bird'; }
+
+/* image fallback */
+function guard(el){ el.addEventListener('error', function(){ el.style.opacity = '0'; }, { once:true }); }
+$$('img').forEach(guard);
+
+/* ------------------------------------------------------------------
+   Header, nav, bar
+------------------------------------------------------------------ */
+$('#year').textContent = new Date().getFullYear();
+var header = $('.header');
+var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 10); };
+onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+var burger = $('.burger'), mnav = $('#mnav');
+function setNav(open){
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  mnav.style.setProperty('--mnav-top', header.getBoundingClientRect().bottom + 'px');
+  mnav.classList.toggle('open', open);
+  document.body.classList.toggle('no-scroll', open);
+}
+burger.addEventListener('click', function(){ setNav(burger.getAttribute('aria-expanded') !== 'true'); });
+mnav.addEventListener('click', function(e){ if (e.target.closest('a')) setNav(false); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && mnav.classList.contains('open')){ setNav(false); burger.focus(); } });
+window.matchMedia('(min-width:1024px)').addEventListener('change', function(m){ if (m.matches) setNav(false); });
+
+/* active section highlight */
+var navLinks = $$('.nav a');
+if ('IntersectionObserver' in window){
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){
+        navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
+      }
+    });
+  }, { rootMargin:'-45% 0px -50% 0px' });
+  ['shop','quiz','story','founders','society','wholesale'].forEach(function(id){ var s = document.getElementById(id); if (s) secObs.observe(s); });
+}
+
+/* ------------------------------------------------------------------
+   Cart (persists in this browser)
+------------------------------------------------------------------ */
+var cart = {};
+try { cart = JSON.parse(localStorage.getItem('sb-cart') || '{}') || {}; } catch(e){ cart = {}; }
+Object.keys(cart).forEach(function(k){ if (!byId[k]) delete cart[k]; });
+function save(){ try { localStorage.setItem('sb-cart', JSON.stringify(cart)); } catch(e){} }
+function count(){ return Object.keys(cart).reduce(function(a,k){ return a + cart[k]; }, 0); }
+function total(){ return Object.keys(cart).reduce(function(a,k){ return a + cart[k] * byId[k].price; }, 0); }
+
+var cartBtn = $('#cart-open'), cartDlg = $('#cart');
+function renderCart(){
+  var n = count(), t = total();
+  var badge = $('.cart-count', cartBtn); badge.textContent = n; badge.dataset.n = n;
+  cartBtn.setAttribute('aria-label', 'Open cart, ' + n + (n === 1 ? ' item' : ' items'));
+  var left = Math.max(0, 75 - t);
+  var shipIncluded = !!cart['founding-50'];
+  $('#ship').classList.toggle('done', left === 0 || shipIncluded);
+  $('#ship-text').textContent = (left === 0 || shipIncluded) ? 'You\'ve unlocked free shipping' : 'You\'re ' + money(left) + ' away from free shipping';
+  $('#ship-bar').style.width = (shipIncluded ? 100 : Math.min(100, t / 75 * 100)) + '%';
+  $('#subtotal').textContent = money(t);
+  $('#bar-text').textContent = n === 0 ? 'Free shipping in Canada over $75.' : (left === 0 || shipIncluded ? 'Free shipping unlocked.' : money(left) + ' away from free shipping.');
+  var lines = $('#lines'); lines.innerHTML = '';
+  $('#cart-foot').hidden = n === 0;
+  $('#ship').hidden = n === 0;
+  $('#upsell').hidden = n === 0 || cart['ritual'] || cart['house'] || cart['re-up'];
+  if (n === 0){
+    lines.innerHTML = '<li class="empty"><h3>Your cart is empty.</h3><p>Add something worth eating.</p><a class="btn" href="#shop" data-close>Shop the line</a></li>';
+    return;
+  }
+  Object.keys(cart).forEach(function(k){
+    var p = byId[k], li = document.createElement('li'); li.className = 'cart-line';
+    li.innerHTML = '<img alt="" width="64" height="80"><div><b></b><span></span><div class="qty"><button type="button" data-q="-1">−</button><output></output><button type="button" data-q="1">+</button></div></div><div class="line-right"><b></b><button type="button" data-rm>Remove</button></div>';
+    var im = $('img', li); im.src = img(p, 200, p.sq ? 200 : 250); guard(im);
+    $('div > b', li).textContent = p.name;
+    $('div > span', li).textContent = p.type;
+    $('output', li).textContent = cart[k];
+    $('.line-right b', li).textContent = money(p.price * cart[k]);
+    $$('[data-q]', li).forEach(function(b){ b.setAttribute('aria-label', (b.dataset.q === '1' ? 'Increase ' : 'Decrease ') + p.name + ' quantity'); b.addEventListener('click', function(){ change(k, Number(b.dataset.q)); }); });
+    $('[data-rm]', li).setAttribute('aria-label', 'Remove ' + p.name);
+    $('[data-rm]', li).addEventListener('click', function(){ delete cart[k]; save(); renderCart(); syncAdds(); });
+    lines.appendChild(li);
+  });
+}
+function change(k, d){ cart[k] = (cart[k] || 0) + d; if (cart[k] <= 0) delete cart[k]; save(); renderCart(); syncAdds(); }
+function add(id, qty, quiet){
+  var p = byId[id]; if (!p || p.soldOut) return;
+  cart[id] = (cart[id] || 0) + (qty || 1); save(); renderCart(); syncAdds();
+  cartBtn.classList.remove('bump'); void cartBtn.offsetWidth; cartBtn.classList.add('bump');
+  if (!quiet) toast(p.name + ' added to cart');
+}
+function syncAdds(){
+  $$('.add[data-id]').forEach(function(b){
+    var id = b.dataset.id; if (byId[id] && byId[id].soldOut) return;
+    var inCart = !!cart[id];
+    b.classList.toggle('added', inCart);
+    b.innerHTML = inCart ? '<svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>In cart' : '<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Add';
+  });
+}
+function openCart(){ if (!cartDlg.open){ cartDlg.showModal(); document.body.classList.add('no-scroll'); } }
+cartBtn.addEventListener('click', openCart);
+$('#checkout').addEventListener('click', function(){ toast('Demo: this connects to Shopify checkout in the live build', true); });
+
+/* dialogs: close on backdrop, [data-close], and restore scroll */
+$$('dialog').forEach(function(d){
+  d.addEventListener('click', function(e){
+    if (e.target === d || e.target.closest('[data-close]')) d.close();
+  });
+  d.addEventListener('close', function(){ document.body.classList.remove('no-scroll'); });
+});
+
+/* toast */
+var toastEl = $('#toast'), toastTimer;
+function toast(msg, noBtn){
+  $('#toast-text').textContent = msg;
+  $('#toast-btn').hidden = !!noBtn;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 3200);
+}
+$('#toast-btn').addEventListener('click', function(){ toastEl.classList.remove('show'); openCart(); });
+
+/* ------------------------------------------------------------------
+   Product grid + filters + tilt
+------------------------------------------------------------------ */
+var grid = $('#grid');
+P.forEach(function(p){
+  var li = document.createElement('li'); li.className = 'card'; li.dataset.type = p.type; li.setAttribute('data-reveal','');
+  li.innerHTML =
+    '<div class="card-media">' +
+      '<button type="button" aria-label="Quick view ' + p.name + '"></button>' +
+      (p.soldOut ? '<span class="card-badge card-badge--out">Sold out</span>' : p.badge ? '<span class="card-badge' + (p.hot ? ' card-badge--hot' : '') + '">' + p.badge + '</span>' : '') +
+      '<img loading="lazy" width="600" height="750" alt="">' +
+      '<span class="card-peek" aria-hidden="true">Quick view</span>' +
+    '</div>' +
+    '<div class="card-body"><span class="card-type"></span><h3></h3><p class="card-note"></p>' +
+    '<div class="card-foot"><span class="card-price"></span><button class="add" type="button" data-id="' + p.id + '"></button></div></div>';
+  var im = $('img', li); im.src = img(p); im.alt = alt(p); guard(im);
+  $('.card-type', li).textContent = p.type + (p.type === 'Sauce' ? ' · 355 mL' : ' · 227 g');
+  $('h3', li).textContent = p.name;
+  $('.card-note', li).textContent = p.note;
+  $('.card-price', li).textContent = money(p.price);
+  var addBtn = $('.add', li);
+  if (p.soldOut){ addBtn.disabled = true; addBtn.textContent = 'Sold out'; }
+  addBtn.setAttribute('aria-label', p.soldOut ? p.name + ' is sold out' : 'Add ' + p.name + ' to cart');
+  addBtn.addEventListener('click', function(){ add(p.id); });
+  $('.card-media button', li).addEventListener('click', function(){ openQV(p.id); });
+  grid.appendChild(li);
+});
+syncAdds();
+
+function filterTo(type){
+  $$('.tab').forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.filter === type)); });
+  $$('.card', grid).forEach(function(c){ c.classList.toggle('hidden', !(type === 'all' || c.dataset.type === type)); c.classList.add('in'); });
+}
+$$('.tab').forEach(function(t){ t.addEventListener('click', function(){ filterTo(t.dataset.filter); }); });
+$$('[data-go-filter]').forEach(function(a){ a.addEventListener('click', function(){ filterTo(a.dataset.goFilter); }); });
+
+if (!reduced && window.matchMedia('(hover:hover)').matches){
+  $$('.card-media').forEach(function(m){
+    var im = $('img', m);
+    m.addEventListener('pointermove', function(e){
+      var r = m.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      im.style.setProperty('--ry', (x * 8).toFixed(2) + 'deg'); im.style.setProperty('--rx', (-y * 8).toFixed(2) + 'deg');
+    });
+    m.addEventListener('pointerleave', function(){ im.style.setProperty('--ry','0deg'); im.style.setProperty('--rx','0deg'); });
+  });
+}
+
+/* ------------------------------------------------------------------
+   Quick view dialog (accessible, fixes the broken popup)
+------------------------------------------------------------------ */
+var qv = $('#qv'), qvId = null, qvQty = 1;
+function heatText(h){ return ['','Mild, flavour first','Warm','Proper kick','Make you sweat'][h] + ' (' + h + '/4)'; }
+function openQV(id){
+  var p = byId[id]; qvId = id; qvQty = 1;
+  var im = $('#qv-img'); im.style.opacity = ''; im.src = img(p, 900, 1125); im.alt = alt(p);
+  $('#qv-type').textContent = p.type + (p.badge ? ' · ' + p.badge : '');
+  $('#qv-name').textContent = p.name;
+  $('#qv-price').textContent = money(p.price);
+  $('#qv-desc').textContent = p.desc;
+  $('#qv-best').textContent = p.best;
+  $('#qv-heat').textContent = heatText(p.heat);
+  $('#qv-size').textContent = p.size + ', made by hand, gluten-free';
+  $('#qv-allergens').textContent = p.allergens;
+  $('#qv-qty').textContent = 1;
+  var pr = byId[p.pair], pair = $('#qv-pair');
+  pair.innerHTML = '<img alt="" width="48" height="60"><p><b></b><span></span></p><button class="add" type="button"></button>';
+  var pim = $('img', pair); pim.src = img(pr, 200, 250); guard(pim);
+  $('b', pair).textContent = 'Pairs with ' + pr.name;
+  $('span', pair).textContent = p.pairNote;
+  var pb = $('button', pair);
+  pb.innerHTML = cart[pr.id] ? 'In cart' : '+ ' + money(pr.price);
+  pb.setAttribute('aria-label', 'Add ' + pr.name + ' to cart');
+  pb.addEventListener('click', function(){ add(pr.id); pb.textContent = 'In cart'; pb.classList.add('added'); });
+  var addBtn = $('#qv-add');
+  addBtn.disabled = !!p.soldOut;
+  addBtn.textContent = p.soldOut ? 'Sold out, back soon' : 'Add to cart · ' + money(p.price);
+  qv.showModal(); document.body.classList.add('no-scroll');
+}
+function qvUpdate(){ $('#qv-qty').textContent = qvQty; var p = byId[qvId]; if (!p.soldOut) $('#qv-add').textContent = 'Add to cart · ' + money(p.price * qvQty); }
+$('#qv-minus').addEventListener('click', function(){ qvQty = Math.max(1, qvQty - 1); qvUpdate(); });
+$('#qv-plus').addEventListener('click', function(){ qvQty = Math.min(12, qvQty + 1); qvUpdate(); });
+$('#qv-add').addEventListener('click', function(){ add(qvId, qvQty); qv.close(); });
+
+/* ------------------------------------------------------------------
+   Hero flavour stage
+------------------------------------------------------------------ */
+var stageImg = $('#stage-img'), current = 'full-frontal';
+function setStage(id){
+  if (id === current) return; current = id;
+  var p = byId[id];
+  $$('.chip').forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.sauce === id)); });
+  stageImg.classList.add('leaving');
+  setTimeout(function(){
+    stageImg.style.opacity = '';
+    stageImg.src = img(p, 900, 1200); stageImg.alt = alt(p);
+    var done = function(){ stageImg.classList.remove('leaving'); };
+    if (stageImg.complete) done(); else { stageImg.onload = done; stageImg.onerror = done; }
+  }, reduced ? 0 : 220);
+  $('#stage-name').textContent = p.name;
+  $('#stage-price').textContent = p.soldOut ? 'Sold out' : money(p.price);
+  $('#stage-desc').textContent = p.stage;
+  $$('#stage-heat b').forEach(function(b, i){ b.classList.toggle('on', i < p.heat); });
+  $('#stage-heat-sr').textContent = p.heat + ' of 4';
+  $('#stage-award').classList.toggle('hide', id !== 'full-frontal');
+  var sa = $('#stage-add'); sa.disabled = !!p.soldOut; sa.textContent = p.soldOut ? 'Sold out' : 'Add to cart';
+}
+$$('#stage-heat b').forEach(function(b, i){ b.classList.toggle('on', i < 3); });
+$$('.chip').forEach(function(c){ c.addEventListener('click', function(){ setStage(c.dataset.sauce); }); });
+$('#stage-add').addEventListener('click', function(){ add(current); });
+$('#stage-more').addEventListener('click', function(){ openQV(current); });
+
+/* ------------------------------------------------------------------
+   Flavour DNA quiz
+------------------------------------------------------------------ */
+var NAMES = ['Pickle Ranch','Spice Rack','Smoke Show','Savoury Affair'];
+var PICKS = { 0:['loose-lips','ranch-hand'], 1:['thirst-trap','full-frontal'], 2:['late-checkout','bird-bath'], 3:['foul-play','salt-me-daddy'] };
+var KITCHEN = ['Dipper','Grill','Weeknight','Brunch & late-night'];
+var step = 0, qs = $$('.q'), next = $('#quiz-next'), back = $('#quiz-back');
+function answered(i){ return !!$('input[name="q' + i + '"]:checked'); }
+function showStep(i){
+  step = i;
+  qs.forEach(function(q, k){ q.classList.toggle('on', k === i); });
+  $('#quiz-step').textContent = 'Question ' + (i + 1) + ' of 4';
+  $('#quiz-bar').style.width = ((i + 1) / 4 * 100) + '%';
+  $('.progress').setAttribute('aria-valuenow', i + 1);
+  back.hidden = i === 0;
+  next.disabled = !answered(i);
+  next.innerHTML = i === 3 ? 'Reveal my Flavour DNA' : 'Next <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg>';
+}
+$$('#quiz-form input[type=radio]').forEach(function(r){
+  r.addEventListener('change', function(){
+    next.disabled = false;
+    var lit = Number(r.value);
+    if (!r.name.match(/q2/)) $$('#profiles li').forEach(function(li){ li.classList.toggle('lit', Number(li.dataset.p) === lit); });
+    if (step < 3 && !reduced) setTimeout(function(){ if (answered(step)) showStep(step + 1); }, 380);
+  });
+});
+next.addEventListener('click', function(){ if (!answered(step)) return; if (step < 3) showStep(step + 1); else reveal(); });
+back.addEventListener('click', function(){ if (step > 0) showStep(step - 1); });
+var four = [];
+function reveal(){
+  var v = function(i){ return Number($('input[name="q' + i + '"]:checked').value); };
+  var score = [0,0,0,0]; score[v(0)] += 1; score[v(1)] += 1.5; score[v(3)] += 1.2;
+  var order = [0,1,2,3].sort(function(a,b){ return score[b] - score[a]; });
+  var a = order[0], b = order[1], heat = v(2);
+  if (score[b] === 0){ b = { 0:3, 1:2, 2:3, 3:1 }[a]; }
+  four = PICKS[a].concat(PICKS[b]);
+  if (heat >= 3 && four.indexOf('full-frontal') === -1) four[3] = 'full-frontal';
+  qs.forEach(function(q){ q.classList.remove('on'); });
+  $('#quiz-nav').hidden = true;
+  $('.quiz-top').hidden = true;
+  $('#result-title').innerHTML = '<em>' + NAMES[a] + '</em> × ' + NAMES[b];
+  $('#result-meta').innerHTML = '<li>Heat <b>' + heat + ' / 4</b></li><li>Kitchen <b>' + KITCHEN[v(0)] + '</b></li><li>Hero match <b>' + byId[four[0]].name + '</b></li>';
+  var picks = $('#picks'); picks.innerHTML = '';
+  var sum = 0;
+  four.forEach(function(id){
+    var p = byId[id]; sum += p.price;
+    var li = document.createElement('li'); li.className = 'pick';
+    li.innerHTML = '<img alt="" width="52" height="64"><div><b></b><span></span></div>';
+    var im = $('img', li); im.src = img(p, 200, 250); guard(im);
+    $('b', li).textContent = p.name; $('span', li).textContent = p.type + ' · ' + money(p.price);
+    picks.appendChild(li);
+  });
+  $('#add-four').textContent = 'Add my starting four · ' + money(sum);
+  $$('#profiles li').forEach(function(li){ var n = Number(li.dataset.p); li.classList.toggle('lit', n === a || n === b); });
+  var r = $('#result'); r.classList.add('on'); r.focus({ preventScroll:true });
+}
+$('#add-four').addEventListener('click', function(){ four.forEach(function(id){ add(id, 1, true); }); toast('Your starting four is in the cart'); });
+$('#quiz-restart').addEventListener('click', function(){
+  $('#quiz-form').reset(); $('#result').classList.remove('on'); $('#quiz-nav').hidden = false; $('.quiz-top').hidden = false;
+  $$('#profiles li').forEach(function(li){ li.classList.remove('lit'); }); showStep(0);
+  var first = $('#q0a'); if (first) first.focus();
+});
+
+/* ------------------------------------------------------------------
+   Founder ledger
+------------------------------------------------------------------ */
+var ledger = $('#ledger'), picked = null;
+for (var n = 11; n <= 60; n++){
+  var li = document.createElement('li'), b = document.createElement('button');
+  b.type = 'button'; b.textContent = n;
+  var taken = n <= 44;
+  b.className = taken ? 'taken' : 'open';
+  b.setAttribute('aria-label', 'SB-' + n + (taken ? ', claimed' : ', available'));
+  if (taken) b.setAttribute('aria-disabled', 'true');
+  (function(num, btn, t){
+    btn.addEventListener('click', function(){
+      if (t){ $('#ledger-note').innerHTML = 'SB-' + num + ' is already on the record. Pick an open one.'; return; }
+      $$('#ledger .picked').forEach(function(x){ x.classList.remove('picked'); x.setAttribute('aria-pressed','false'); });
+      btn.classList.add('picked'); btn.setAttribute('aria-pressed','true'); picked = num;
+      $('#ledger-note').innerHTML = '<b>SB-' + num + '</b> could be yours. Permanent, never reissued.';
+      $('#founder-add').textContent = 'Claim SB-' + num + ' · $129';
+    });
+  })(n, b, taken);
+  li.appendChild(b); ledger.appendChild(li);
+}
+$('#founder-add').addEventListener('click', function(){ add('founding-50', 1, true); toast((picked ? 'SB-' + picked + ' requested. ' : '') + 'Founding 50 set added'); });
+$$('[data-add]').forEach(function(b){ b.addEventListener('click', function(){ add(b.dataset.add); }); });
+
+/* ------------------------------------------------------------------
+   Reviews scroller
+------------------------------------------------------------------ */
+var rev = $('#reviews');
+$$('[data-rev]').forEach(function(b){ b.addEventListener('click', function(){
+  var card = $('li', rev); var w = card ? card.getBoundingClientRect().width + 16 : 300;
+  rev.scrollBy({ left: w * Number(b.dataset.rev), behavior: reduced ? 'auto' : 'smooth' });
+}); });
+
+/* ------------------------------------------------------------------
+   Newsletter
+------------------------------------------------------------------ */
+$('#news').addEventListener('submit', function(e){
+  e.preventDefault();
+  var inp = $('#news-email'), msg = $('#news-msg'), v = inp.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ msg.className = 'news-msg err'; msg.textContent = 'Enter an email like name@example.com.'; inp.setAttribute('aria-invalid','true'); inp.focus(); return; }
+  inp.removeAttribute('aria-invalid'); msg.className = 'news-msg ok'; msg.textContent = 'You\'re on the list. First word on every drop.'; inp.value = '';
+});
+
+/* ------------------------------------------------------------------
+   Reveal + timeline progress
+------------------------------------------------------------------ */
+if ('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin:'0px 0px -8% 0px', threshold:.08 });
+  $$('[data-reveal]').forEach(function(el){ io.observe(el); });
+  var tio = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) en.target.classList.add('seen'); }); }, { rootMargin:'0px 0px -35% 0px' });
+  $$('#timeline li').forEach(function(el){ tio.observe(el); });
+  var lio = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ $('#ledger-bar').style.width = '68%'; lio.disconnect(); } });
+  lio.observe($('#ledger'));
+} else {
+  $$('[data-reveal]').forEach(function(el){ el.classList.add('in'); }); $('#ledger-bar').style.width = '68%';
+}
+
+/* ------------------------------------------------------------------
+   Ask Saucy: on-page assistant trained on the Saucy Bird catalogue
+------------------------------------------------------------------ */
+var chat = $('#chat'), fab = $('#chat-fab'), log = $('#chat-log'), input = $('#chat-input'), sugg = $('#suggest'), greeted = false;
+function openChat(){
+  chat.classList.add('open'); chat.setAttribute('aria-hidden','false'); fab.classList.add('hide'); fab.setAttribute('aria-expanded','true');
+  if (window.matchMedia('(max-width:559px)').matches) document.body.classList.add('no-scroll');
+  if (!greeted){ greeted = true; bot([ 'Hey! I\'m Saucy, the Saucy Bird sauce sommelier.', 'Tell me what you\'re cooking and I\'ll match you with a sauce or rub. I can also answer questions about shipping, gluten-free, founders and The Society.' ], null, ['Wings tonight','Something spicy','Is it gluten-free?','What\'s the Founding 50?']); }
+  setTimeout(function(){ input.focus(); }, 250);
+}
+function closeChat(){ chat.classList.remove('open'); chat.setAttribute('aria-hidden','true'); fab.classList.remove('hide'); fab.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll'); fab.focus(); }
+fab.addEventListener('click', openChat);
+$('#chat-close').addEventListener('click', closeChat);
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && chat.classList.contains('open')) closeChat(); });
+$$('[data-open-chat]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); openChat(); }); });
+
+function scrollLog(){ log.scrollTop = log.scrollHeight; }
+function me(text){ var d = document.createElement('div'); d.className = 'msg me'; d.textContent = text; log.appendChild(d); scrollLog(); }
+function bot(lines, products, chips){
+  var t = document.createElement('div'); t.className = 'msg bot typing'; t.setAttribute('aria-label','Saucy is typing'); t.innerHTML = '<i></i><i></i><i></i>';
+  log.appendChild(t); scrollLog();
+  setTimeout(function(){
+    t.remove();
+    var d = document.createElement('div'); d.className = 'msg bot';
+    lines.forEach(function(l){ var p = document.createElement('p'); p.textContent = l; d.appendChild(p); });
+    (products || []).forEach(function(id){
+      var p = byId[id]; if (!p) return;
+      var m = document.createElement('div'); m.className = 'mini';
+      m.innerHTML = '<img alt="" width="40" height="50"><div><b></b><span></span></div>';
+      var im = $('img', m); im.src = img(p, 120, p.sq ? 120 : 150); guard(im);
+      $('b', m).textContent = p.name; $('span', m).textContent = (p.note || p.type) + ' · ' + money(p.price);
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'add';
+      if (p.soldOut){ btn.disabled = true; btn.textContent = 'Sold out'; }
+      else { btn.textContent = cart[id] ? 'In cart' : '+ Add'; btn.setAttribute('aria-label','Add ' + p.name + ' to cart'); btn.addEventListener('click', function(){ add(id); btn.textContent = 'In cart'; btn.classList.add('added'); }); }
+      m.appendChild(btn); d.appendChild(m);
+    });
+    log.appendChild(d); scrollLog();
+    setChips(chips || ['Recommend a sauce','Shipping','The Society','Take the quiz']);
+  }, reduced ? 50 : 550 + Math.min(900, lines.join(' ').length * 6));
+}
+function setChips(list){
+  sugg.innerHTML = '';
+  list.forEach(function(c){ var b = document.createElement('button'); b.type = 'button'; b.textContent = c; b.addEventListener('click', function(){ send(c); }); sugg.appendChild(b); });
+}
+function has(t, words){ return words.some(function(w){ return t.indexOf(w) !== -1; }); }
+function findProduct(t){ for (var i = 0; i < P.length; i++){ if (t.indexOf(P[i].name.toLowerCase()) !== -1) return P[i]; } return null; }
+
+function reply(raw){
+  var t = ' ' + raw.toLowerCase().replace(/[^a-z0-9$' ]/g,' ') + ' ';
+  var prod = findProduct(t);
+  if (prod && has(t, [' add ',' buy ',' cart ',' order '])){ if (prod.soldOut) return [[prod.name + ' is sold out right now, but it\'ll be back. Want a close match? Try Foul Play.'], ['foul-play']]; add(prod.id, 1, true); return [['Done, ' + prod.name + ' is in your cart. It pairs really well with ' + byId[prod.pair].name + ':'], [prod.pair], ['View cart','Recommend a sauce']]; }
+  if (has(t, ['view cart','my cart','checkout'])){ openCart(); var n = count(); return [[n ? 'Opened your cart. You have ' + n + ' item' + (n>1?'s':'') + ', ' + money(total()) + ' so far.' + (total() < 75 ? ' Add ' + money(75 - total()) + ' more for free shipping.' : ' Free shipping unlocked.') : 'Your cart is empty. Want a recommendation?']]; }
+  if (prod){ return [[prod.name + ': ' + prod.desc, 'Best with ' + prod.best.toLowerCase() + '. Heat ' + prod.heat + '/4.' + (prod.allergens !== 'See label' ? ' Contains ' + prod.allergens.toLowerCase() + '.' : '')], [prod.id, prod.pair]]; }
+  if (has(t, [' hi ',' hey ',' hello ',' yo ',' sup '])) return [['Hey! What are you cooking? Tell me the food and I\'ll match the sauce.'], null, ['Wings tonight','Burgers','Fries','Salmon']];
+  if (has(t, ['wing','strip','chicken','tender','nugget'])) return [['Chicken is home turf. Rub it with Bird Bath before cooking, then dip in Foul Play. Want it cool and creamy instead? Loose Lips.'], ['bird-bath','foul-play','loose-lips']];
+  if (has(t, ['burger','smash','sandwich'])) return [['For burgers: Foul Play as the spread, or swap ketchup for Late Checkout and don\'t look back.'], ['foul-play','late-checkout']];
+  if (has(t, ['fries','fry','popcorn','potato','chips'])) return [['Shake Salt Me Daddy over hot fries, then dip them in Foul Play. That combo is the whole brand in two bites.'], ['salt-me-daddy','foul-play']];
+  if (has(t, ['rib','bbq','barbecue','grill','pork','steak','brisket','smoke'])) return [['Grill night: rub with Bird Bath, then baste with Late Checkout in the last twenty minutes and let it lacquer.'], ['bird-bath','late-checkout']];
+  if (has(t, ['egg','pizza','taco','breakfast','brunch'])) return [['Full Frontal. A bright coffee hot sauce that won Best Flavour at the 2026 Vancouver Hot Sauce Festival. Made for eggs, pizza and tacos.'], ['full-frontal','salt-me-daddy']];
+  if (has(t, ['salmon','fish','halibut','seafood','shrimp','bowl','vegetable','veg','tofu','salad'])) return [['Thirst Trap brings lemon pepper, harissa and za\'atar, perfect on salmon, halibut, bowls and roasted veg. Finish with a drizzle of Loose Lips.'], ['thirst-trap','loose-lips']];
+  if (has(t, ['spicy','spice','hot ','heat','sweat','kick'])) return [['Most heat in the line: Full Frontal (3/4). For warm spice with an edge, Thirst Trap.'], ['full-frontal','thirst-trap']];
+  if (has(t, ['mild','kid','not spicy','no heat'])) return [['Flavour first, heat in the background: Loose Lips, Salt Me Daddy and Ranch Hand are all 1/4 heat.'], ['loose-lips','salt-me-daddy','ranch-hand']];
+  if (has(t, ['recommend','suggest','best','start','favourite','favorite','popular','which'])) return [['If you only try one, make it Foul Play. It\'s the one that tastes most like Saucy Bird. Or take the Flavour DNA quiz for a starting four.'], ['foul-play'], ['Take the quiz','Something spicy','Rubs']];
+  if (has(t, ['quiz','dna','profile'])) { setTimeout(function(){ document.getElementById('quiz').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); }, 900); return [['Four questions, no email needed. Taking you there now.']]; }
+  if (has(t, ['gluten','celiac','coeliac','wheat'])) return [['Yes. The entire line is 100% gluten-free and celiac-safe, pH tested, and made in a Vancouver Coastal Health compliant kitchen.']];
+  if (has(t, ['allerg','dairy','milk','sesame','nut','mustard','vegan'])) return [['Allergens vary by product. Foul Play contains sesame, milk, mustard and sulphites. Late Checkout contains mustard. Ask me about any product by name, and always check the label.']];
+  if (has(t, ['ship','deliver','shipping','post'])) return [['Everything ships from Vancouver, BC. Free shipping in Canada on orders over $75. The Founding 50 set includes shipping.' + (count() ? ' You\'re at ' + money(total()) + ' right now.' : '')]];
+  if (has(t, ['founder','founding','50','ledger','number','sb-'])) return [['The Founding 50 is the complete set of eight sauces and rubs for $129 with shipping included. You get a permanent Ledger number from SB-11 to SB-60, a founder card, and 48-hour early access to every drop, for life.','16 are left. When they\'re gone, they\'re gone.'], ['founding-50']];
+  if (has(t, ['society','subscri','member','box','pause','skip','cancel','ritual','house','re up','reup'])) return [['The Society sends a curated box every 60 days. The Re-Up is $31.99 (two sauces), The Ritual is $59.99 (two sauces, two rubs) and The House is $75.99 (three sauces, two rubs, vault releases). Skip or pause anytime.'], ['ritual'], ['Founding 50','Shipping']];
+  if (has(t, ['wholesale','stock','retail','store','shop owner','carry','restaurant account'])) return [['Wholesale is $8 per sauce and $7 per rub, 12 units minimum per SKU, currently in British Columbia. Email seamus@eatsaucybird.com to apply.']];
+  if (has(t, ['price','cost','how much','cheap'])) return [['Sauces are $15.99 (Full Frontal $17.99), rubs are $13.99, and the complete Founding 50 set is $129 shipped.']];
+  if (has(t, ['story','who','seamus','founder story','about','started'])) return [['Saucy Bird is Seamus Dixon\'s thirty years of kitchens in a bottle: Burger King at 16, bars, Smak, eight years at Simons, and chicken strips that were BRGR BRGR\'s top seller for six straight years.']];
+  if (has(t, ['award','festival','won'])) return [['Full Frontal won Best Flavour at the 2026 Vancouver Hot Sauce Festival.'], ['full-frontal']];
+  if (has(t, ['rub'])) return [['Four rubs, $13.99 each: Salt Me Daddy (umami fry seasoning), Bird Bath (southern BBQ), Ranch Hand (ranch and pickle), Thirst Trap (lemon pepper, harissa, za\'atar).'], ['salt-me-daddy','bird-bath','ranch-hand','thirst-trap']];
+  if (has(t, ['sauce'])) return [['Five sauces: Foul Play (signature), Late Checkout (coffee BBQ), Loose Lips (cool hot ranch), Full Frontal (coffee hot sauce) and Strip Tease (espresso honey mustard, currently sold out).'], ['foul-play','late-checkout','full-frontal']];
+  if (has(t, ['contact','email','phone','human','person','help'])) return [['You can reach the team at hello@eatsaucybird.com. For wholesale, email seamus@eatsaucybird.com.']];
+  if (has(t, ['thank','thanks','cheers','awesome','great'])) return [['Anytime. Go make something better.']];
+  return [['I\'m best with food and Saucy Bird questions. Try telling me what you\'re cooking, like "salmon" or "wings", or ask about shipping, gluten-free or the Founding 50.']];
+}
+function send(text){
+  text = (text || '').trim(); if (!text) return;
+  me(text); sugg.innerHTML = '';
+  if (text === 'View cart'){ var r0 = reply('view cart'); bot(r0[0], r0[1], r0[2]); return; }
+  var r = reply(text); bot(r[0], r[1], r[2]);
+}
+$('#chat-form').addEventListener('submit', function(e){ e.preventDefault(); send(input.value); input.value = ''; });
+
+renderCart();
+})();
+</script>
+</body>
+</html>
